@@ -6,6 +6,10 @@
     z-index: 2;
    @media screen and (max-width:767px) {
     margin-top: 20px;
-    background-color: #037eff;
+    background-color: var(--bgFooter);
    }
+}
+.z-ind{
+    position: absolute;
+    z-index: 4;
 }
