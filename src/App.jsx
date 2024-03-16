@@ -6,7 +6,7 @@ import Services from './pages/Services/index.js'
 import Contact from './pages/Contact/index.js'
 import Pages from './pages/Pages/index.js'
 import Blog from './pages/Blog/index.js'
-
+import Footer from './Components/Footer'
 export default function App() {
   return (
     <div className="App">
@@ -25,6 +25,7 @@ export default function App() {
             <Route path="*" element={"Page 404"} />
           </Route>
         </Routes>
+        <Footer/>
         <Outlet />
       </BrowserRouter>
     </div>
