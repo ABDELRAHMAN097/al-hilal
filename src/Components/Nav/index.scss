@@ -6,10 +6,18 @@
     z-index: 2;
    @media screen and (max-width:767px) {
     margin-top: 20px;
-    background-color: var(--bgFooter);
    }
+}
+ul{
+    // @media screen and (max-width:767px){
+    //     background-color: transparent;
+    //     color: white;
+    // }
 }
 .z-ind{
     position: absolute;
     z-index: 4;
+    border: 1px solid #313131;
+    color: #313131;
+    border-radius: 4px;
 }
