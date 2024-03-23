@@ -55,14 +55,15 @@ body {
 }
 
 :root{
-  --bgFooter: #23252d;
+  --bgFooter: #f6f6f6;
+  --fontColor: #555;
   --gradient-color1: #f4e8c5; 
   --gradient-color2: #fbf2ee; 
   --gradient-color2: #f5cdca; 
   --gradient-direction: to right; /* Gradient direction */
   --bgIcon: #393b42;
   --second-color: hsla(0, 0%, 100%, 0.7);
-  --blueColor: #0774e7;
+  --blueColor: #3fbbc0;
 }
 
 @media screen and (min-width: 100px) {
