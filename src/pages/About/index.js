@@ -22,8 +22,9 @@ export default function index() {
   return (
     <div className='apout'>
     <div className='intro-about'>
-      <h1>ABOUT US</h1>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <h1>عن مستشفي الهلال</h1>
+      <p> مستشفي الهلال تساعدك للوصول سريعا للعلاج الصحيح و الدكتور المناسب او اي تخصص طبي  تحتاجه بالإضافة لتخصص الحضانات
+</p>
     </div>
     <div className='info-about'>
     <div className='img-bannar wow animate__animated animate__backInLeft'>
