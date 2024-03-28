@@ -22,3 +22,8 @@ ul{
     color: #313131;
     border-radius: 4px;
 }
+button{
+    &:hover{
+        color: black;
+    }
+}

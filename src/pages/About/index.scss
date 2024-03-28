@@ -7,6 +7,7 @@
   gap: 3rem;
 }
 .intro-about {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,16 @@
     font-weight: 700;
     padding: 10px 0;
     color: var(--fontColor);
-    border-bottom: 2px solid var(--blueColor);
+   
+  }
+  .line{
+    position: absolute;
+    width: 85px;
+    height: 3px;
+    background-color: var(--blueColor);
+    top: 53px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   p {
     text-align: center;
@@ -27,34 +37,74 @@
 }
 .info-about {
   display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 3rem;
-    
-    width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 3rem;
+
+  width: 100%;
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 }
-.text-about{
-    display: flex;
+.text-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  text-align: right;
+
+  padding: 20px;
+  span {
+    color: var(--blueColor);
+    padding: 5px;
+  }
+}
+.img-about {
+  @media screen and (min-width: 767px) {
+    width: 500px;
+  }
+}
+.taps {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 767px) {
     flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
-    text-align: right;
- 
-    padding: 20px;
-    span{
-        color: var(--blueColor);
-        padding: 5px;
-    }
+  }
 }
-.img-bannar{
-  
-}
-.img-about{
- @media screen and (min-width: 767px){
- width: 500px;
- }
+.tap {
+  width: 23%;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  @media screen and (max-width: 767px) {
+  width: 80%;
+    
+  }
+  p {
+    color: var(--fontColor);
+    font-size: 31px;
+    font-weight: 600;
+  }
+  span {
+    color: var(--blueColor);
+    padding: 5px;
+    font-size: 30px;
+  }
+  .small{
+    font-size: 14px;
+  }
+  .dd{
+    color: black;
+    font-size: 14px;
+  }
 }

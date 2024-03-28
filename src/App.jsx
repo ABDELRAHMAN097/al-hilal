@@ -4,9 +4,9 @@ import HomePage from './pages/HomePage'
 import About from './pages/About/index.js'
 import Services from './pages/Services/index.js'
 import Contact from './pages/Contact/index.js'
-import Pages from './pages/Pages/index.js'
 import Blog from './pages/Blog/index.js'
 import Footer from './Components/Footer'
+import Notfound from './Components/Notfound/Notfound.js';
 export default function App() {
   return (
     <div className="App">
@@ -18,11 +18,11 @@ export default function App() {
             <Route path="about" element={<About/>} />
             <Route path="services" element={<Services/>} />
             <Route path="contact" element={<Contact/>} />
-            <Route path="pages" element={<Pages/>} />
+            
             <Route path="blog" element={<Blog/>} />
             <Route path="form" element={"Form Page"} />
             <Route path="login" element={"Login Page"} />
-            <Route path="*" element={"Page 404"} />
+            <Route path="*" element={<Notfound/>} />
           </Route>
         </Routes>
         <Footer/>

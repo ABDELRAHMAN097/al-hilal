@@ -1,0 +1,100 @@
+.Services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  gap: 3rem;
+  width: 100%;
+}
+.intro-services {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px 0;
+    color: var(--fontColor);
+  }
+  .line {
+    position: absolute;
+    width: 46px;
+    height: 3px;
+    background-color: var(--blueColor);
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  p {
+    text-align: center;
+    width: 80%;
+    font-weight: 500;
+  }
+}
+.taps {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.tap {
+  position: relative;
+  width: calc((100% - 24rem) / 3);
+  border-radius: 8px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  &:hover {
+    .icon {
+      box-shadow: 1px 1px 10px var(--blueColor);
+    }
+  }
+  @media screen and (max-width: 767px) {
+    width: 80%;
+  }
+  .icon {
+    background-color: white;
+    padding: 22px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px var(--fontColor);
+    color: var(--blueColor);
+
+    svg {
+      font-size: 25px;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .line-tap {
+    position: absolute;
+    width: 51px;
+    height: 1px;
+    background-color: var(--blueColor);
+    top: 165px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (max-width: 767px) {
+      top: 155px;
+    }
+  }
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+}

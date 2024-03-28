@@ -46,6 +46,7 @@
       height: 50px;
       border-radius: 50%;
       background-color: var(--bgIcon);
+      color: white;
     }
     .textFooter {
       display: flex;
@@ -69,6 +70,7 @@
         width: 153px;
         background-color: white;
         padding: 15px;
+        font-size: 14px;
         border-top-left-radius: 9px;
         border-bottom-left-radius: 9px;
       }

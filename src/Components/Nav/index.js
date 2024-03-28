@@ -46,7 +46,7 @@ export default function index() {
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/blog">Blog</Link>
              </li>
-            <button className='btn bg-blue-300 text-white py-1 px-3 md:ml-3 rounded md:static'>Appointment</button>
+            <button className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black'>Appointment</button>
             </ul>
           </div>
         </div>
