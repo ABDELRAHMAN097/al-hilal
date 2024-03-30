@@ -1,5 +1,4 @@
 #HomePage {
- 
   #Spans {
     display: flex;
     button {
@@ -11,5 +10,57 @@
     td {
       vertical-align: middle;
     }
+  }
+  
+
+}
+
+.cont{
+  position: relative;
+}
+
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+  width: 400px;
+}
+.swiper-horizontal {
+  touch-action: pan-y;
+  width: 700px;
+  @media screen and (max-width:767px){
+  width: 300px;
+    
+  }
+}
+.text-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 70%;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  background-color: rgba(255, 255, 255, 0.774);
+  padding: 20px;
+  border-top: 2px solid var(--blueColor);
+  text-align: center;
+  gap: 15px;
+  h1{
+    font-size: 18px;
+    font-weight: 800;
+  }
+  p{
+    font-size: 14px;
+    color: var(--fontColor);
+  }
+  button{
+    background-color: var(--blueColor);
+    color: #fff;
+    padding: 5px;
+    width: 120px;
+    border-radius: 4px;
+    font-weight: 600;
   }
 }

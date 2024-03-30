@@ -51,7 +51,7 @@ export default function index() {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Embedded Content"
-          
+          // eslint-disable-next-line react/jsx-no-duplicate-props
           width="100%"
           // eslint-disable-next-line react/jsx-no-duplicate-props
           height="400"

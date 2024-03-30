@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage'
 import About from './pages/About/index.js'
 import Services from './pages/Services/index.js'
 import Contact from './pages/Contact/index.js'
-import Blog from './pages/Blog/index.js'
+import Doctors from './pages/Doctors/index.js'
 import Footer from './Components/Footer'
 import Notfound from './Components/Notfound/Notfound.js';
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
             <Route path="services" element={<Services/>} />
             <Route path="contact" element={<Contact/>} />
             
-            <Route path="blog" element={<Blog/>} />
+            <Route path="blog" element={<Doctors/>} />
             <Route path="form" element={"Form Page"} />
             <Route path="login" element={"Login Page"} />
             <Route path="*" element={<Notfound/>} />
