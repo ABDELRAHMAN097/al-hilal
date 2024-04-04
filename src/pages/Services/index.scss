@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
   h1 {
     font-size: 30px;
     font-weight: 700;
@@ -48,6 +49,7 @@
   width: calc((100% - 15rem) / 3);
   border-radius: 8px;
   padding: 40px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,8 +60,11 @@
       box-shadow: 1px 1px 10px var(--blueColor);
     }
   }
+  @media screen and (max-width: 992px) {
+  width: calc((100% - 1rem) / 3);
+  }
   @media screen and (max-width: 767px) {
-    width: 80%;
+    width: 90%;
   }
   .icon {
     background-color: white;
@@ -90,7 +95,7 @@
     left: 50%;
     transform: translateX(-50%);
     @media screen and (max-width: 767px) {
-      top: 155px;
+      top: 175px;
     }
   }
   p {

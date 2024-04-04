@@ -51,14 +51,14 @@ export default function index() {
     </div>
 <div className='taps'>
 
-<div className='tap'>
+<div className='tap-about'>
 <p><span> <FontAwesomeIcon icon={faUserDoctor}/> </span> <Number n={85}/></p>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
-<div className='tap'>
+<div className='tap-about'>
   
   <p><span><FontAwesomeIcon icon={faHospitalAlt} /></span> <Number n={26}/> </p>
   <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
@@ -66,14 +66,14 @@ export default function index() {
 
 </div>
 
-<div className='tap'>
+<div className='tap-about'>
 <p><span> <FontAwesomeIcon icon={faFlask}/> </span> <Number n={14}/></p>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
-<div className='tap'>
+<div className='tap-about'>
 <p><span> <FontAwesomeIcon icon={faAward}/> </span> <Number n={150}/></p>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>

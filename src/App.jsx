@@ -5,6 +5,7 @@ import About from './pages/About/index.js'
 import Services from './pages/Services/index.js'
 import Contact from './pages/Contact/index.js'
 import Doctors from './pages/Doctors/index.js'
+import APPOINTMENT from './Components/APPOINTMENT/index.js'
 import Footer from './Components/Footer'
 import Notfound from './Components/Notfound/Notfound.js';
 export default function App() {
@@ -18,8 +19,8 @@ export default function App() {
             <Route path="about" element={<About/>} />
             <Route path="services" element={<Services/>} />
             <Route path="contact" element={<Contact/>} />
-            
-            <Route path="blog" element={<Doctors/>} />
+            <Route path="APPOINTMENT" element={<APPOINTMENT/>} />
+            <Route path="doctors" element={<Doctors/>} />
             <Route path="form" element={"Form Page"} />
             <Route path="login" element={"Login Page"} />
             <Route path="*" element={<Notfound/>} />

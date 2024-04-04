@@ -46,13 +46,14 @@ export default function index() {
           <div className="tab">
           <h2>Quick Links</h2>
           <ul>
-                <Link to="">Home</Link>         
+                   
+                <Link to="/">Home</Link>
+
                 <Link to="/about">About</Link>  
                 <Link to="/services">Services</Link>
-                <Link to="/">Pricing Plans</Link>
-                <Link to="/">Doctors</Link>
-                <Link to="/">Blog</Link>
-                <Link to="/">Contact Us</Link>
+                <Link to="/doctors">Doctors</Link>
+                
+                <Link to="/contact">Contact Us</Link>
           </ul>
           </div>
         </div>
@@ -78,7 +79,7 @@ export default function index() {
         </div>
       </div>
       <div className="Copyright">
-        <p>Copyright © Medizai | Designed by Flowzai - Powered by Webflow</p>
+        <p>Copyright © Al-Hilal | Designed by Abdelrahman - Powered by Abdelrahman</p>
         <div className="social"> 
           <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
           <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>

@@ -7,9 +7,10 @@ import salma111 from '../../assets/img/slide-3.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./index.scss";
 import 'swiper/css';
+import axios from "axios";
 export default function HomePage() {
   return (
-    <div>
+    <div className="home">
      
       <Swiper 
       slidesPerView={1} loop
@@ -52,6 +53,23 @@ export default function HomePage() {
         <img src='../../assets/img/slide-3.jpg' alt=""/>
       </div> 
       <Emergency />
+  
     </div>
   );
 }
+
+// axios.post("http://localhost:3004/users", {name: "morgan" , adress: "fesha" , salarry: "1500"})
+// .then((data) => console.log(data.data))
+
+// axios("http://localhost:3004/users/1").then((data) => console.log(data.data))
+// axios("http://localhost:3004/users/2").then((data) => console.log(data.data))
+// axios("http://localhost:3004/users/?adress=sheben&age=26").then((data) => console.log(data.data))
+// axios("http://localhost:3004/users/?_sort=name&_order=asc").then((data) => console.log(data.data))
+
+
+// axios("http://localhost:3004/users").then((data) => console.log(data.data))
+
+// axios("http://localhost:3004/users").then((data) => console.log(data.data))
+
+// axios.post("http://localhost:3004/users", {name : "roqaya" , salarry : "6500" , adress : "shanawan"}).then((data) => console.log(data.data))
+// axios("http://localhost:3004/users/?adress=shanawan").then((data) => console.log(data.data))
