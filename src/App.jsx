@@ -8,6 +8,8 @@ import Doctors from './pages/Doctors/index.js'
 import APPOINTMENT from './Components/APPOINTMENT/index.js'
 import Footer from './Components/Footer'
 import Notfound from './Components/Notfound/Notfound.js';
+import Login from './pages/Login/Login.js';
+import Register from './pages/Register/Register.js';
 export default function App() {
   return (
     <div className="App">
@@ -21,8 +23,8 @@ export default function App() {
             <Route path="contact" element={<Contact/>} />
             <Route path="APPOINTMENT" element={<APPOINTMENT/>} />
             <Route path="doctors" element={<Doctors/>} />
-            <Route path="form" element={"Form Page"} />
-            <Route path="login" element={"Login Page"} />
+            <Route path="register" element={<Register/>} />
+            <Route path="login" element={<Login/>} />
             <Route path="*" element={<Notfound/>} />
           </Route>
         </Routes>

@@ -46,6 +46,12 @@ left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-i
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/doctors">Doctors</Link>
              </li>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/register">register</Link>
+             </li>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/login">Login</Link>
+             </li>
             
             <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
             </ul>
