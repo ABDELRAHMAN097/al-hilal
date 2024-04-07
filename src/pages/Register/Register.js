@@ -8,8 +8,11 @@ import axios from "axios";
 export default function Register() {
 
   function handleRegister (values){
-      console.log(values)
-     axios.post("https://boody-magdy.vercel.app/api/user/signup , values")
+    const newData ={...values}
+    delete newData.confirm_password;
+    console.log(newData)
+     axios.post("https://boody-magdy.vercel.app/api/user/signup" , newData).then(response => console.log(response))
+     .catch(errors => console.log(errors))
   }
 
 
@@ -38,7 +41,7 @@ export default function Register() {
               </div>
               <div className="input-group">
                 <label htmlFor="">Phone numper</label>
-                <Field type="text" name="phone" placeholder="Full Name" />
+                <Field type="text" name="phone" placeholder="Phone numper" />
                 <Error>
                   <ErrorMessage name="name" />
                 </Error>
