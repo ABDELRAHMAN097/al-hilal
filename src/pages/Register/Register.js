@@ -41,7 +41,7 @@ export default function Register() {
               </div>
               <div className="input-group">
                 <label htmlFor="">Phone numper</label>
-                <Field type="text" name="phone" placeholder="Phone numper" />
+                <Field type="text" name="phone" placeholder="Phone-numper" />
                 <Error>
                   <ErrorMessage name="name" />
                 </Error>
