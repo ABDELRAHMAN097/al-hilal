@@ -11,7 +11,7 @@ export default function Register() {
     const newData ={...values}
     delete newData.confirm_password;
     console.log(newData)
-    axios.post("https://boody-magdy.vercel.app/api/user/signup" , newData).then(response => console.log(response))
+    axios.post("https://boody-magdy.vercel.app/api/users/signup" , newData).then(response => console.log(response))
     .catch(errors => console.log(errors))
   }
 
