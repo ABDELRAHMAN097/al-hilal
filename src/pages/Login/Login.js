@@ -5,15 +5,27 @@ import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import LoginSchema from "../../Schemas/LoginSchema";
 import axios from "axios";
+import { toast } from 'react-toastify';
 export default function Login() {
 
-  function handleRegister (values){
+  
+
+  function handleLogin (values){
     const newData ={...values}
     delete newData.confirm_password;
     console.log(newData)
-     axios.post("https://boody-magdy.vercel.app/api/user/signup , newData")
+     axios.post("https://boody-magdy.vercel.app/api/users/login" , newData)
+     .then(userData =>{
+      if(userData.data){
+        toast.success("tmm ya rayq")
+      }else{
+        toast.error("a7a msh tmm")
+      }
+     }).catch(toast.error("حدث خطأ أثناء محاولة الاتصال بالخادم"))
   }
 
+  
+  
 
   return (
     <div className="auth-form m-auto my-5">
@@ -23,7 +35,7 @@ export default function Login() {
           password: "",
         }}
         validationSchema={LoginSchema}
-        onSubmit={handleRegister} 
+        onSubmit={handleLogin} 
         >
         {({ errors }) => {
           return (
@@ -46,7 +58,7 @@ export default function Login() {
                 don{" ُ"}t have an acount? <Link to="/Register">Register Now</Link>
               </div>
               <div className="d-flex justify-end">
-                <button type="submit">Register</button>
+                <button type="submit">Login</button>
               </div>
             </Form>
           );

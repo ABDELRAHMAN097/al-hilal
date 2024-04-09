@@ -10,6 +10,8 @@ import Footer from './Components/Footer'
 import Notfound from './Components/Notfound/Notfound.js';
 import Login from './pages/Login/Login.js';
 import Register from './pages/Register/Register.js';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 export default function App() {
   return (
     <div className="App">
@@ -31,6 +33,7 @@ export default function App() {
         <Footer/>
         <Outlet />
       </BrowserRouter>
+        <ToastContainer />
     </div>
   );
 }
