@@ -17,12 +17,18 @@ export default function Login() {
      axios.post("https://boody-magdy.vercel.app/api/users/login" , newData)
      .then(userData =>{
       if(userData.data){
-        toast.success("tmm ya rayq")
+        toast.success(`مرحباً بك ${userData.data.fullName}`);
+        console.log(userData.data)
       }else{
-        toast.error("a7a msh tmm")
+        toast.error("حدث خطاء")
       }
-     }).catch(toast.error("حدث خطأ أثناء محاولة الاتصال بالخادم"))
-  }
+     })
+      .catch(error => {
+            console.error("خطأ في الاتصال بالخادم:", error);
+            toast.error("حدث خطأ أثناء محاولة الاتصال بالخادم");
+        });
+}
+  
 
   
   
