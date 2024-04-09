@@ -2,13 +2,15 @@ import React from "react";
 import "./Login.scss";
 import Error from "../../Erorr/Error"
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import LoginSchema from "../../Schemas/LoginSchema";
 import axios from "axios";
 import { toast } from 'react-toastify';
-export default function Login() {
 
+export default function Login() {
   
+  const navigate = useNavigate()
 
   function handleLogin (values){
     const newData ={...values}
@@ -18,6 +20,7 @@ export default function Login() {
      .then(userData =>{
       if(userData.data){
         toast.success(`مرحباً بك ${userData.data.fullName}`);
+        navigate('/APPOINTMENT')
         console.log(userData.data)
       }else{
         toast.error("حدث خطاء")
@@ -28,11 +31,6 @@ export default function Login() {
             toast.error("حدث خطأ أثناء محاولة الاتصال بالخادم");
         });
 }
-  
-
-  
-  
-
   return (
     <div className="auth-form m-auto my-5">
       <Formik

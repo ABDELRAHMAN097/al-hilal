@@ -65,7 +65,9 @@
   }
 }
 .btn-ll{
+  background-color: var(--blueColor);
   position: absolute;
+  border-radius: 5px;
   left: 50%;
   bottom: 11px;
   width: 70px;

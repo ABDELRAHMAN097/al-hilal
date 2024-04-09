@@ -8,10 +8,9 @@ export default function index() {
         <span className="line"></span>
         <p>
           {" "}
-          الرجاء تسجيل الدخول باستخدام معرفك وكلمة المرور الخاصة بك <br />
-          يرجى اختيار التخصص الطبي المطلوب واختيار الطبيب المفضل لديك من القائمة
+          يرجى اختيار الطبيب المفضل لديك من القائمة
           المتاحة <br />
-          يرجى تحديد التاريخ والوقت المناسبين لك للموعد الطبي <br />
+          يرجى تحديد التاريخ والوقت المناسبين لك حسب التخصص للموعد الطبي <br />
           بعد تحديد الموعد، يُطلب منك تأكيد الحجز لإتمام العملية <br />
           شكرًا لاستخدامك نظام حجز المستشفى الإلكتروني. نتطلع لخدمتك وتقديم
           الرعاية الصحية المناسبة لك
@@ -30,20 +29,11 @@ export default function index() {
 
           <input
             className="input-ll col-3"
-            type="email"
-            id="email"
-            name="email"
+            type="time"
+            id="name"
+            name="name"
             required
-            placeholder=":البريد الإلكتروني"
-          />
-
-          <input
-            className="input-ll col-3"
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-            placeholder=":رقم التليفون"
+            placeholder=":الوقت"
           />
 
           <input
@@ -57,19 +47,6 @@ export default function index() {
 
           <select
             className="input-ll col-3"
-            id="department"
-            name="department"
-            required
-            placeholder=":القسم"
-          >
-            <option value="">اسنان</option>
-            <option value="أطفال">أطفال</option>
-            <option value="نساء وتوليد">نساء وتوليد</option>
-            <option value="جراحة">جراحة</option>
-          </select>
-
-          <select
-            className="input-ll col-3"
             id="doctor"
             name="doctor"
             required
@@ -80,14 +57,6 @@ export default function index() {
             <option value="دكتور محمد">دكتورة سلمي</option>
             <option value="دكتور محمد">دكتور محمد </option>
           </select>
-
-          <textarea
-            className="textarea-ll"
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="رسالة إضافية (اختياري)"
-          ></textarea>
           <button className="btn-ll" type="submit">
             حجز
           </button>

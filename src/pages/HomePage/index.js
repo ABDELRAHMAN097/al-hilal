@@ -7,13 +7,12 @@ import salma111 from '../../assets/img/slide-3.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./index.scss";
 import 'swiper/css';
-import axios from "axios";
 export default function HomePage() {
   return (
     <div className="home">
      
       <Swiper 
-      slidesPerView={1} loop
+      slidesPerView={"auto"} loop
       >
         <SwiperSlide className="cont"> 
         
@@ -23,7 +22,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-         <img src={salma} alt=""/> 
+         <img className="w-100" src={salma} alt=""/> 
         </SwiperSlide>
         <SwiperSlide className="cont">  
         
@@ -33,7 +32,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-        <img src={salam11} alt=""/> 
+        <img className="w-100" src={salam11} alt=""/> 
         
        </SwiperSlide>
         <SwiperSlide className="cont">
@@ -43,11 +42,10 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-           <img src={salma111} alt=""/> 
+           <img className="w-100" src={salma111} alt=""/> 
             </SwiperSlide>
 
       </Swiper>
-
 
        <div>
         <img src='../../assets/img/slide-3.jpg' alt=""/>

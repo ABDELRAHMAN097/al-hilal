@@ -22,22 +22,8 @@
   justify-content: center;
   width: 100%;
 }
-
 .cont{
   position: relative;
-}
-
-.swiper-wrapper {
-  transform: translate3d(0px, 0, 0);
-  width: 400px;
-}
-.swiper-horizontal {
-  touch-action: pan-y;
-  width: 700px;
-  @media screen and (max-width:767px){
-  width: 300px;
-    
-  }
 }
 .text-box{
   display: flex;
@@ -71,4 +57,15 @@
     border-radius: 4px;
     font-weight: 600;
   }
+  @media screen and (max-width:767px){
+    width: 70%;
+    margin: 20px 10px;
+       h1{
+        font-size: 16px;
+       };
+       p{
+        font-size: 12px;
+       }
+        
+    }
 }
