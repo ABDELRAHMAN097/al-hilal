@@ -7,11 +7,13 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import LoginSchema from "../../Schemas/LoginSchema";
 import axios from "axios";
 import { toast } from 'react-toastify';
+import { useRecoilState } from "recoil";
+import $AuthData from '../../store/index'
 
 export default function Login() {
-  
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
+  const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
+console.log(authRecoil)
   function handleLogin (values){
     const newData ={...values}
     delete newData.confirm_password;
@@ -20,6 +22,11 @@ export default function Login() {
      .then(userData =>{
       if(userData.data){
         toast.success(`مرحباً بك ${userData.data.fullName}`);
+        setauthRecoil({
+          isAuth : true,
+          user : userData.data.fullName
+        })
+       
         navigate('/APPOINTMENT')
         console.log(userData.data)
       }else{

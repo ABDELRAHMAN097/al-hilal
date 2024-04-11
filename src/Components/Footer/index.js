@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./index.scss";
 import logo from "../../assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +6,12 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF , faLinkedinIn , faTwitter } from "@fortawesome/free-brands-svg-icons";
+
+import $AuthData from '../../store/index'
+import { useRecoilState } from "recoil";
 export default function index() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [authRecoil] = useRecoilState($AuthData)
   return (
     <div id="footer">
       <div className="footer-top flex items-center justify-between">
@@ -46,14 +51,36 @@ export default function index() {
           <div className="tab">
           <h2>Quick Links</h2>
           <ul>
-                   
-                <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
+          {authRecoil.isAuth ?
+             <ul>
+                <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                 <Link to="/about">About</Link>
+               </li>
+               <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/contact">Contact</Link>
+             </li>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/doctors">Doctors</Link>
+             </li>
+             <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
+             </ul>
+
+            : (<Fragment> 
+            <ul>
+            <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/">log out</Link>
+             </li>
+            </ul>
+               </Fragment>)}  
+                  
+                {/* <Link to="/">Home</Link>
 
                 <Link to="/about">About</Link>  
                 <Link to="/services">Services</Link>
                 <Link to="/doctors">Doctors</Link>
                 
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">Contact Us</Link> */}
           </ul>
           </div>
         </div>

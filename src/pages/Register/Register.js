@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import React from "react";
 import "./Register.scss";
 import Error from "../../Erorr/Error"
@@ -5,15 +6,23 @@ import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import RegisterSchema from "../../Schemas/RegisterSchema";
 import axios from "axios";
-export default function Register() {
+import {useNavigate} from 'react-router-dom'
+import { toast } from 'react-toastify';
 
+export default function Register() {
+const navigate = useNavigate()
   function handleRegister (values){
     const newData ={...values}
     delete newData.confirm_password;
     console.log(newData)
-    axios.post("https://boody-magdy.vercel.app/api/users/signup" , newData).then(response => console.log(response))
-    .catch(errors => console.log(errors))
-  }
+    axios.post("https://boody-magdy.vercel.app/api/users/signup" , newData)
+    .then(response =>{
+      toast.success(`تم التسجيل يرايق`);
+
+      navigate('/login')
+      console.log(response)
+    })
+    .catch(errors =>console.log(errors))}
 
   return (
     <div className="auth-form m-auto my-5">

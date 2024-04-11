@@ -1,6 +1,10 @@
 import { atom } from "recoil";
 
-export const $Current_Width = atom({
-  key: "$Current_Width",
-  default: window.innerWidth,
+ const $AuthData = atom({
+  key: "$AuthData",
+  default: {
+    isAuth : false,
+    user : null
+  },
 });
+export default $AuthData
