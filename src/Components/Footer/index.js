@@ -53,7 +53,8 @@ export default function index() {
           <ul>
           <Link to="/">Home</Link>
           {authRecoil.isAuth ?
-             <ul>
+          <div className="tab">
+            <ul>
                 <li className='font-semibold my-7 md:my-0 md:ml-8'>
                  <Link to="/about">About</Link>
                </li>
@@ -65,13 +66,15 @@ export default function index() {
              </li>
              <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
              </ul>
-
+          </div>
             : (<Fragment> 
-            <ul>
+              <div className="tab">
+              <ul>
             <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/">log out</Link>
              </li>
             </ul>
+              </div>
                </Fragment>)}  
                   
                 {/* <Link to="/">Home</Link>
