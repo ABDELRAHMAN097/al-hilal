@@ -22,11 +22,12 @@ console.log(authRecoil)
      .then(userData =>{
       if(userData.data){
         toast.success(`مرحباً بك ${userData.data.fullName}`);
-        setauthRecoil({
+        const localData = {
           isAuth : true,
           user : userData.data.fullName
-        })
-       
+        }
+        setauthRecoil(localData)
+       localStorage.setItem('loginUser' , JSON.stringify(localData))
         navigate('/APPOINTMENT')
         console.log(userData.data)
       }else{

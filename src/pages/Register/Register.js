@@ -17,7 +17,7 @@ const navigate = useNavigate()
     console.log(newData)
     axios.post("https://boody-magdy.vercel.app/api/users/signup" , newData)
     .then(response =>{
-      toast.success(`تم التسجيل يرايق`);
+      toast.success(`تم التسجيل يرايق` , {autoClose:2000});
 
       navigate('/login')
       console.log(response)
