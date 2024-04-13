@@ -9,6 +9,7 @@ import { faFacebookF , faLinkedinIn , faTwitter } from "@fortawesome/free-brands
 
 import $AuthData from '../../store/index'
 import { useRecoilState } from "recoil";
+import LogOut from "../LogOut/LogOut";
 export default function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [authRecoil] = useRecoilState($AuthData)
@@ -51,7 +52,7 @@ export default function index() {
           <div className="tab">
           <h2>Quick Links</h2>
           <ul>
-          <Link to="/">Home</Link>
+         
           {authRecoil.isAuth ?
           <div className="tab">
             <ul>
@@ -65,14 +66,16 @@ export default function index() {
                 <Link to="/doctors">Doctors</Link>
              </li>
              <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <LogOut/>
+             </li>
              </ul>
           </div>
             : (<Fragment> 
               <div className="tab">
               <ul>
-            <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/">log out</Link>
-             </li>
+            
+             <Link to="/">Home</Link>
             </ul>
               </div>
                </Fragment>)}  
