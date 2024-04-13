@@ -22,7 +22,8 @@ const navigate = useNavigate()
       navigate('/login')
       console.log(response)
     })
-    .catch(errors =>console.log(errors))}
+    .catch(
+      errors =>console.log(errors))}
 
   return (
     <div className="auth-form m-auto my-5">
