@@ -48,14 +48,14 @@ export default function index() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1718.0624173338467!2d31.011354804373642!3d30.54577690191162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d65e3d189b97%3A0x874f56a556466cee!2sEgyptian%20Red%20Crescent%20Hospital!5e0!3m2!1sen!2seg!4v1711465566580!5m2!1sen!2seg"
           width="100%"
           height="400"
-          allowfullscreen=""
+          allowFullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Embedded Content"
           allowFullScreen
         ></iframe>
       </div>
-      <dav className='contactUs'>
+      <div className='contactUs'>
 
         <div className="ourAddress">
           <div className="parent1">
@@ -89,7 +89,7 @@ export default function index() {
 
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form className="formContact" onSubmit={handleSubmit}>
 
 
           {/* name && email */}
@@ -144,7 +144,7 @@ export default function index() {
           </div>
           <button type="submit">إرسال</button>
         </form>
-      </dav>
+      </div>
       
     </div>
   );

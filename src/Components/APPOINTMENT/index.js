@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Appointment.scss";
 import axios from "axios";
 import { Formik , Form, Field } from "formik";
@@ -6,14 +6,20 @@ import AppointSchemas from '../../Schemas/AppointSchemas';
 import { toast } from 'react-toastify';
 export default function index() {
 
-
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [appointments, setAppointments] = useState([]);
   function handelAppointment(values){
     const newValues = {...values}
     axios.post("https://boody-magdy.vercel.app/api/appointments/" , newValues)
     .then(response => {
       toast.success(`تم الحجز يرايق`);
-      console.log(response.data)})
+      console.log(response.data)
+      setAppointments(prevAppointments => [...prevAppointments, response.data]);
+      const storedAppointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    // إضافة البيانات الجديدة إلى البيانات الموجودة بالفعل في localStorage
+    localStorage.setItem('appointments', JSON.stringify([...storedAppointments, response.data]));
+  
+    })
     .catch(error => {
       toast.success('حدث خطاء لم يتم الحجز');
       console.log.error("خطأ اثناء الاتصال بالخادم:" , error)
@@ -33,7 +39,7 @@ export default function index() {
           شكرًا لاستخدامك نظام حجز المستشفى الإلكتروني. نتطلع لخدمتك وتقديم
           الرعاية الصحية المناسبة لك
         </p>
-      </div>
+      
 
 
       <Formik
@@ -49,7 +55,7 @@ export default function index() {
 
         {({ errors }) => {
           return(
-            <Form className="d-block">
+            <Form>
         <div className="inputs">
         <label htmlFor="">Name</label>
         <Field className="input-ll col-3" type="text" name="name" placeholder=":الاسم"/>
@@ -64,20 +70,7 @@ export default function index() {
         <Field type="text" name="doctor" placeholder=":اسم الدكتور"/>
         </div>
 
-        <select
-            className="input-ll col-3"
-            id="department"
-            name="department"
-            required
-            placeholder=":القسم"
-          >
-            <option value="">اسنان</option>
-            <option value="أطفال">أطفال</option>
-            <option value="نساء وتوليد">نساء وتوليد</option>
-            <option value="جراحة">جراحة</option>
-          </select>
-
-        <select
+        {/* <select
             className="input-ll col-3"
             id="doctor"
             name="doctor"
@@ -88,7 +81,7 @@ export default function index() {
             <option value="دكتورة سارة">دكتورة سارة</option>
             <option value="دكتور محمد">دكتورة سلمي</option>
             <option value="دكتور محمد">دكتور محمد </option>
-          </select>
+          </select> */}
 
           <button className="btn-ll" type="submit">
             حجز
@@ -98,6 +91,33 @@ export default function index() {
           );
         }}
       </Formik>
+      </div>
+      <div className="Appoint-data">
+      <table>
+      <thead>
+        <tr>
+          <th>اسم الحالة</th>
+          <th>الوقت</th>
+          <th>التاريخ</th>
+          <th>اسم الدكتور</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+     
+      {appointments.map(appointment => (
+              <tr key={appointment.id}>
+                <td>{appointment.name}</td>
+                <td>{appointment.time}</td>
+                <td>{appointment.date}</td>
+                <td>{appointment.doctor}</td>
+                
+              </tr>
+            ))}
+       
+      </tbody>
+    </table>
+      </div>
     </div>
   );
 }

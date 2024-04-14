@@ -78,54 +78,54 @@
         width: 100%;
       }
 }
-// form {
-//   border-radius: 10px;
-//   width: 50%;
-//   padding: 20px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: stretch;
-//   gap: 1rem;
-//   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-//   @media screen and (max-width:767px){
-//     width: 100%;
-//   }
-//   input,
-//   textarea {
-//     border: 0.2px solid var(--fontColor);
-//     border-radius: 5px;
-//     padding: 10px;
-//     width: 200px;
-//     font-size: 16px;
-//     width: 100%;
-//     &:hover {
-//       border: 0.2px solid var(--blueColor);
-//     }
-//     outline: none;
-//   }
-//   .sub {
-//     width: 100%;
-//   }
-//   .name-email {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     justify-content: space-between;
-//     align-items: center;
-//     width: 100%;
-//     gap: 1rem;
-//   }
-//   button {
-//     padding: 10px;
-//     color: white;
-//     background-color: var(--blueColor) !important;
-//     border-radius: 5px;
-//     outline: none;
-//     &:hover {
-//       border: none;
-//       color: white;
-//       padding: 10px;
-//     }
-//   }
-// }
+.formContact {
+  border-radius: 10px;
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width:767px){
+    width: 100%;
+  }
+  input,
+  textarea {
+    border: 0.2px solid var(--fontColor);
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    width: 100%;
+    &:hover {
+      border: 0.2px solid var(--blueColor);
+    }
+    outline: none;
+  }
+  .sub {
+    width: 100%;
+  }
+  .name-email {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  button {
+    padding: 10px;
+    color: white;
+    background-color: var(--blueColor) !important;
+    border-radius: 5px;
+    outline: none;
+    &:hover {
+      border: none;
+      color: white;
+      padding: 10px;
+    }
+  }
+}

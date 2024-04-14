@@ -43,6 +43,9 @@ left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-i
                  <Link to="/about">About</Link>
                </li>
                <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/services">Services</Link>
+             </li>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/contact">Contact</Link>
              </li>
              <li className='font-semibold my-7 md:my-0 md:ml-8'>

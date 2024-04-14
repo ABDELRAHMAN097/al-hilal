@@ -13,6 +13,8 @@ import Register from "./pages/Register/Register.js";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
+import NotLoggedIn from "./Components/ProtectedRoutes/NotLoggedIn.js";
+import IsloggedIn from "./Components/ProtectedRoutes/IsloggedIn.js";
 export default function App() {
   return (
     <div className="App">
@@ -22,13 +24,41 @@ export default function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
-              <Route path="about" element={<About />} />
-              <Route path="services" element={<Services />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="APPOINTMENT" element={<APPOINTMENT />} />
-              <Route path="doctors" element={<Doctors />} />
-              <Route path="register" element={<Register />} />
-              <Route path="login" element={<Login />} />
+              <Route path="about" element={
+                <IsloggedIn>
+                  <About />
+                </IsloggedIn>
+              } />
+              <Route path="services" element={
+                <IsloggedIn>
+                  <Services />
+                </IsloggedIn>
+              } />
+              <Route path="contact" element={
+                <IsloggedIn>
+                  <Contact />
+                </IsloggedIn>
+              } />
+              <Route path="APPOINTMENT" element={
+                <IsloggedIn>
+                  <APPOINTMENT />
+                </IsloggedIn>
+              } />
+              <Route path="doctors" element={
+                <IsloggedIn>
+                  <Doctors />
+                </IsloggedIn>
+              } />
+              <Route path="register" element={
+                <NotLoggedIn>
+                  <Register/>
+                </NotLoggedIn>
+              } />
+              <Route path="login" element={
+                <NotLoggedIn>
+                  <Login/>
+                </NotLoggedIn>
+              } />
               <Route path="*" element={<Notfound />} />
             </Route>
           </Routes>

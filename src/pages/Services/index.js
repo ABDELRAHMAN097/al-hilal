@@ -1,7 +1,6 @@
 import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import APPOINTMENT from '../../Components/APPOINTMENT/index'
 import {
   faDna,
   faHeartbeat,
@@ -108,7 +107,6 @@ export default function index() {
           </p>
         </div>
       </div>
-      <APPOINTMENT/>
     </div>
   );
 }
