@@ -3,6 +3,7 @@
     width: 100%;
 }
 .APPOINTMENT {
+  position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,62 +32,39 @@
       font-weight: 500;
     }
 }
-form{
-  position: relative;
-    border: 1px blue solid;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    gap: 2rem
-}
-.form-appointment{
-    width: 100%;
-    position: relative;
-    box-shadow: none !important;
-    padding: 54px 20px !important;
-}
 .inputs{
-    width: 100%;
-    
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }
-.input-ll{
-    height: 30px;
-    border: 1px solid var(--fontColor);
-    border-radius: 0 !important;
-    &:hover {
-      border: 0.2px solid var(--blueColor);
-    }
-    @media screen and (max-width:767px){
-      width: 100%;
-    }
+form{
+  border: 3px solid rgb(0, 0, 0);
+  padding: 30px 30px;
+  width: 100%;
 }
-.textarea-ll{
-  border: 1px solid var(--fontColor);
-  border-radius: 0 !important;
-  width: 80%;
-  @media screen and (max-width:767px){
-    width: 100%;
-  }
+.input-group{
+  width: calc((100% - 3rem) / 2) !important;
+.input-Appoint{
+  width: calc((100% - 1rem) / 1) !important;
+}
+}
+.specialty{
+  padding: 5px 10px;
+  border-radius: 5px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .btn-ll{
   background-color: var(--blueColor);
-  position: absolute;
-  border-radius: 5px;
-  left: 50%;
-  bottom: 11px;
-  width: 70px;
-  padding: 5px;
-  transform: translateX(-50%)
+  border-radius: 7px;
+  color: white;
+  padding: 10px 21px;
+  height: 35px;
+  width: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .Appoint-data{
   display: flex;
   justify-content: center;
