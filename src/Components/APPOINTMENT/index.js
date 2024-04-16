@@ -1,35 +1,50 @@
-import React, { useState } from "react";
+import React, { useState , useEffect  } from "react";
 import "./Appointment.scss";
 import axios from "axios";
 import Error from "../../Erorr/Error"
 import { ErrorMessage , Formik, Form, Field } from "formik";
 import AppointSchemas from "../../Schemas/AppointSchemas";
 import { toast } from "react-toastify";
-export default function index() {
+
+export default function Index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [appointments, setAppointments] = useState([]);
+
+  useEffect(() => {
+    const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
+    setAppointments(storedAppointments);
+  }, []);
+
+
   function handelAppointment(values) {
     const newValues = { ...values };
     axios
       .post("https://boody-magdy.vercel.app/api/appointments/", newValues)
       .then((response) => {
-        toast.success(`تم الحجز يرايق`);
+        toast.success(`تم الحجز `);
         console.log(response.data);
-        setAppointments((prevAppointments) => [
-          ...prevAppointments,
-          response.data,
-        ]);
-        const storedAppointments =
-          JSON.parse(localStorage.getItem("appointments")) || [];
-        // إضافة البيانات الجديدة إلى البيانات الموجودة بالفعل في localStorage
-        localStorage.setItem(
-          "appointments",
-          JSON.stringify([...storedAppointments, response.data])
-        );
+        const updatedAppointments = [...appointments, response.data];
+        setAppointments(updatedAppointments);
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
       })
       .catch((error) => {
         toast.success("حدث خطاء لم يتم الحجز");
         console.log.error("خطأ اثناء الاتصال بالخادم:", error);
+      });
+  }
+  function handelDelete(id) {
+    axios.delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
+      .then((response) => {
+        toast.success(`تم حذف الموعد بنجاح`);
+        console.log(response.data);
+        // بعد حذف الموعد بنجاح، يمكنك تحديث القائمة لإزالة الموعد المحذوف
+        const updatedAppointments = appointments.filter(appointment => appointment.id !== id);
+        setAppointments(updatedAppointments);
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+      })
+      .catch((error) => {
+        toast.error("حدث خطأ أثناء محاولة حذف الموعد");
+        console.error("خطأ في طلب الحذف:", error);
       });
   }
   return (
@@ -164,12 +179,13 @@ export default function index() {
         </tr>
       </thead>
       <tbody>
-        {appointments.map((appointment) => (
+        {appointments.map((appointment , index) => (
           <tr key={index}>
             <td>{appointment.name}</td>
             <td>{appointment.time}</td>
             <td>{appointment.date}</td>
             <td>{appointment.doctor}</td>
+            <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>delete</button> </td>
           </tr>
         ))}
       </tbody>
