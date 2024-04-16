@@ -56,18 +56,3 @@ export default function HomePage() {
   );
 }
 
-// axios.post("http://localhost:3004/users", {name: "morgan" , adress: "fesha" , salarry: "1500"})
-// .then((data) => console.log(data.data))
-
-// axios("http://localhost:3004/users/1").then((data) => console.log(data.data))
-// axios("http://localhost:3004/users/2").then((data) => console.log(data.data))
-// axios("http://localhost:3004/users/?adress=sheben&age=26").then((data) => console.log(data.data))
-// axios("http://localhost:3004/users/?_sort=name&_order=asc").then((data) => console.log(data.data))
-
-
-// axios("http://localhost:3004/users").then((data) => console.log(data.data))
-
-// axios("http://localhost:3004/users").then((data) => console.log(data.data))
-
-// axios.post("http://localhost:3004/users", {name : "roqaya" , salarry : "6500" , adress : "shanawan"}).then((data) => console.log(data.data))
-// axios("http://localhost:3004/users/?adress=shanawan").then((data) => console.log(data.data))

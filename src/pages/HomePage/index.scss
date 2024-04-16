@@ -36,11 +36,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50% , -50%);
-  background-color: rgba(255, 255, 255, 0.774);
+  background-color: rgba(255, 255, 255, 0.637);
   padding: 20px;
   border-top: 2px solid var(--blueColor);
   text-align: center;
   gap: 15px;
+  margin-bottom: 5px;
   h1{
     font-size: 18px;
     font-weight: 800;
@@ -56,6 +57,7 @@
     width: 120px;
     border-radius: 4px;
     font-weight: 600;
+    margin-bottom: 5px;
   }
   @media screen and (max-width:767px){
     width: 70%;
