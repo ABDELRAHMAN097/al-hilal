@@ -26,8 +26,8 @@ export default function index() {
           </p>
         </div>
       </div>
-      <div className="middle flex">
-        <div className="middleTab col-lg-3 col-md-12 ">
+      <div className="middle">
+        <div className="middleTab">
           <div className="evelopeIcon">
             <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
           </div>
@@ -48,7 +48,7 @@ export default function index() {
             <button type="submit">Submit</button>
           </div>
         </div>
-        <div className="middleTab col-lg-3 col-md-12">
+        <div className="middleTab">
           <div className="tab">
           <h2>Quick Links</h2>
           <ul>
@@ -87,7 +87,7 @@ export default function index() {
           </ul>
           </div>
         </div>
-        <div className="middleTab col-lg-3 col-md-12">
+        <div className="middleTab">
         <div className="tab">
           <h2>Utility Page</h2>
           <ul>
@@ -99,7 +99,7 @@ export default function index() {
           </ul>
           </div>
         </div>
-        <div className="middleTab col-lg-3 col-md-12">
+        <div className="middleTab">
         <div className="tab">
           <h2>Contact</h2>
           <p><span><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon></span> (603) 555-0123</p>

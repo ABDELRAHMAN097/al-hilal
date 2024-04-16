@@ -18,7 +18,7 @@ export default function HomePage() {
         
           <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
               <button>READ MORE</button>
           </div>
 
@@ -28,7 +28,7 @@ export default function HomePage() {
         
         <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
               <button>READ MORE</button>
           </div>
 
@@ -38,7 +38,7 @@ export default function HomePage() {
         <SwiperSlide className="cont">
         <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
               <button>READ MORE</button>
           </div>
 

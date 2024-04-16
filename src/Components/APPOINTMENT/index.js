@@ -152,28 +152,32 @@ export default function index() {
           }}
         </Formik>
       </div>
-      <div className="Appoint-data">
-        <table>
-          <thead>
-            <tr>
-              <th>اسم الحالة</th>
-              <th>الوقت</th>
-              <th>التاريخ</th>
-              <th>اسم الدكتور</th>
-            </tr>
-          </thead>
-          <tbody>
-            {appointments.map((appointment) => (
-              <tr key={appointment.id}>
-                <td>{appointment.name}</td>
-                <td>{appointment.time}</td>
-                <td>{appointment.date}</td>
-                <td>{appointment.doctor}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {appointments.length > 0 && (
+  <div className="Appoint-data">
+    <table>
+      <thead>
+        <tr>
+          <th>اسم الحالة</th>
+          <th>الوقت</th>
+          <th>التاريخ</th>
+          <th>اسم الدكتور</th>
+        </tr>
+      </thead>
+      <tbody>
+        {appointments.map((appointment) => (
+          <tr key={index}>
+            <td>{appointment.name}</td>
+            <td>{appointment.time}</td>
+            <td>{appointment.date}</td>
+            <td>{appointment.doctor}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
+
+     
     </div>
   );
 }
