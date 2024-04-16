@@ -1,8 +1,8 @@
 import React from "react";
 import Emergency from "../../Components/Emergency/Emergency";
-import salma from '../../assets/img/slide-1.jpg'
-import salam11 from '../../assets/img/slide-2.jpg'
-import salma111 from '../../assets/img/slide-3.jpg'
+import ph1 from '../../assets/img/slide-1.jpg'
+import ph2 from '../../assets/img/slide-2.jpg'
+import ph3 from '../../assets/img/slide-3.jpg'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./index.scss";
@@ -22,7 +22,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-         <img className="" src={salma} alt=""/> 
+         <img className="" src={ph1} alt=""/> 
         </SwiperSlide>
         <SwiperSlide className="cont">  
         
@@ -32,7 +32,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-        <img className="" src={salam11} alt=""/> 
+        <img className="" src={ph2} alt=""/> 
         
        </SwiperSlide>
         <SwiperSlide className="cont">
@@ -42,7 +42,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-           <img className="" src={salma111} alt=""/> 
+           <img className="" src={ph3} alt=""/> 
             </SwiperSlide>
 
       </Swiper>
