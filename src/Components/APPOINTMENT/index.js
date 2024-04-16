@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Appointment.scss";
 import axios from "axios";
-import { Formik, Form, Field } from "formik";
+import Error from "../../Erorr/Error"
+import { ErrorMessage , Formik, Form, Field } from "formik";
 import AppointSchemas from "../../Schemas/AppointSchemas";
 import { toast } from "react-toastify";
 export default function index() {
@@ -65,6 +66,9 @@ export default function index() {
                       name="name"
                       placeholder=":الاسم"
                     />
+                    <Error>
+                  <ErrorMessage name="name" />
+                </Error>
                   </div>
 
                   <div className="input-group">
@@ -75,6 +79,9 @@ export default function index() {
                       name="time"
                       placeholder=":الوقت"
                     />
+                    <Error>
+                  <ErrorMessage name="time" />
+                </Error>
                   </div>
 
                   <div className="input-group">
@@ -85,6 +92,9 @@ export default function index() {
                       name="date"
                       placeholder=":التاريخ"
                     />
+                    <Error>
+                  <ErrorMessage name="date" />
+                </Error>
                   </div>
 
                   <div className="input-group">
@@ -95,6 +105,9 @@ export default function index() {
                       name="doctor"
                       placeholder=":اسم الدكتور"
                     />
+                    <Error>
+                  <ErrorMessage name="doctor" />
+                </Error>
                   </div>
                   <div className="input-group">
                   <label htmlFor="">التخصص</label>

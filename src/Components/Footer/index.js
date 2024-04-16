@@ -54,39 +54,36 @@ export default function index() {
           <ul>
          
           {authRecoil.isAuth ?
-          <div className="tab">
+        
             <ul>
                 <li className='font-semibold my-7 md:my-0 md:ml-8'>
                  <Link to="/about">About</Link>
                </li>
                <li className='font-semibold my-7 md:my-0 md:ml-8'>
+                <Link to="/services">Services</Link>
+             </li>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/contact">Contact</Link>
              </li>
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/doctors">Doctors</Link>
              </li>
-             <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
+             <li>
+             <Link className='font-semibold my-7 md:my-0 md:ml-8 btn-Appoint' to= "/APPOINTMENT"> إحجز موعد</Link>
+             </li>
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <LogOut/>
              </li>
              </ul>
-          </div>
+         
             : (<Fragment> 
               <div className="tab">
-              <ul>
+             
             
              <Link to="/">Home</Link>
-            </ul>
+            
               </div>
                </Fragment>)}  
-                  
-                {/* <Link to="/">Home</Link>
-
-                <Link to="/about">About</Link>  
-                <Link to="/services">Services</Link>
-                <Link to="/doctors">Doctors</Link>
-                
-                <Link to="/contact">Contact Us</Link> */}
           </ul>
           </div>
         </div>
