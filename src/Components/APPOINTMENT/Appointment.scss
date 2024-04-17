@@ -1,6 +1,7 @@
 .Appoint{
     background-color: #f7fcfc;
     width: 100%;
+    padding: 20px 0;
 }
 .APPOINTMENT {
   position: relative;
@@ -68,8 +69,21 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  
+  margin: auto;
+  
+  
+  border: #f7fcfc 1px solid;
+  border-radius: 10px;
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.1);
   td , th {
-    padding: 10px;
+    padding: 10px 5px ;
+    border-radius: 10px;
+    @media screen and (max-width: 767px){
+    
+
+      
+    }
   }
+  
 }

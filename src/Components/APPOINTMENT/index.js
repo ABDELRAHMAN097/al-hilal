@@ -32,21 +32,21 @@ export default function Index() {
         console.log.error("خطأ اثناء الاتصال بالخادم:", error);
       });
   }
-  function handelDelete(id) {
-    axios.delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
-      .then((response) => {
-        toast.success(`تم حذف الموعد بنجاح`);
-        console.log(response.data);
-        // بعد حذف الموعد بنجاح، يمكنك تحديث القائمة لإزالة الموعد المحذوف
-        const updatedAppointments = appointments.filter(appointment => appointment.id !== id);
-        setAppointments(updatedAppointments);
-        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
-      })
-      .catch((error) => {
-        toast.error("حدث خطأ أثناء محاولة حذف الموعد");
-        console.error("خطأ في طلب الحذف:", error);
-      });
-  }
+  // function handelDelete(id) {
+  //   axios.delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
+  //     .then((response) => {
+  //       toast.success(`تم حذف الموعد بنجاح`);
+  //       console.log(response.data);
+  //       // بعد حذف الموعد بنجاح، يمكنك تحديث القائمة لإزالة الموعد المحذوف
+  //       const updatedAppointments = appointments.filter(appointment => appointment.id !== id);
+  //       setAppointments(updatedAppointments);
+  //       localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+  //     })
+  //     .catch((error) => {
+  //       toast.error("حدث خطأ أثناء محاولة حذف الموعد");
+  //       console.error("خطأ في طلب الحذف:", error);
+  //     });
+  // }
   return (
     <div className="Appoint">
       <div className="APPOINTMENT">
@@ -185,7 +185,8 @@ export default function Index() {
             <td>{appointment.time}</td>
             <td>{appointment.date}</td>
             <td>{appointment.doctor}</td>
-            <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>delete</button> </td>
+            {/* <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>Delete</button> </td>
+            <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>Update </button> </td> */}
           </tr>
         ))}
       </tbody>
