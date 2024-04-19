@@ -10,7 +10,7 @@ export default function Index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [appointments, setAppointments] = useState([]);
   //تحديد الطبيب حسب الاخيار من قائمة الاطباء
-  const [selectedDoctor, setSelectedDoctor] = useState("");
+  // const [selectedDoctor, setSelectedDoctor] = useState("");
   useEffect(() => {
     const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
     setAppointments(storedAppointments);
@@ -20,7 +20,7 @@ export default function Index() {
 
 
   function handelAppointment(values) {
-    const newValues = { ...values, doctor: selectedDoctor };// تحديث القيمة بإضافة اسم الطبيب
+    const newValues = { ...values};// تحديث القيمة بإضافة اسم الطبيب
     axios
       .post("https://boody-magdy.vercel.app/api/appointments/", newValues)
       .then((response) => {
@@ -136,8 +136,8 @@ export default function Index() {
                       type="text"
                       name="doctor"
                       placeholder=":اسم الدكتور"
-                      value={selectedDoctor} // استخدم قيمة selectedDoctor مباشرة هنا
-                      onChange={(e) => setSelectedDoctor(e.target.value)}
+                      // value={selectedDoctor} 
+                      // onChange={(e) => setSelectedDoctor(e.target.value)}
                     />
                     <Error>
                   <ErrorMessage name="doctor" />
@@ -152,13 +152,13 @@ export default function Index() {
                     name="department"
                     required
                     placeholder=":القسم"
-                    onChange={(e) => setSelectedDoctor(e.target.value)}
+                    // onChange={(e) => setSelectedDoctor(e.target.value)}
                   >
                     <option value="">اختر طبيبك</option>
-                    <option value="احمد">احمد</option>
-                    <option value="نادر">نادر</option>
-                    <option value="سامح">سامح</option>
-                    <option value="مازن">مازن</option>
+                    <option value="">احمد</option>
+                    <option value="">نادر</option>
+                    <option value="">سامح</option>
+                    <option value="">مازن</option>
                   </select>
                   </div>
 
