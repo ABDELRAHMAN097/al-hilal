@@ -52,14 +52,14 @@ console.log(authRecoil)
         {({ errors }) => {
           return (
             <Form>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Email</label>
                 <Field type="text" name="email" placeholder="Email" />
                 <Error>
                   <ErrorMessage name="email" />
                 </Error>
               </div>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Passwoed</label>
                 <Field type="password" name="password" placeholder="Passwoed" />
                 <Error>
@@ -67,7 +67,7 @@ console.log(authRecoil)
                 </Error>
               </div>
               <div className="mb-3 ml-3">
-                don{" ُ"}t have an acount? <Link to="/Register">Register Now</Link>
+                don{" ُ"}t have an acount? <Link className="moveTo" to="/Register">Register Now</Link>
               </div>
               <div className="d-flex justify-end">
                 <button type="submit">Login</button>

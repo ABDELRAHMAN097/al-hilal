@@ -22,7 +22,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-         <img className="" src={ph1} alt=""/> 
+         <img className="w-100" src={ph1} alt=""/> 
         </SwiperSlide>
         <SwiperSlide className="cont">  
         
@@ -32,7 +32,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-        <img className="" src={ph2} alt=""/> 
+        <img className="w-100" src={ph2} alt=""/> 
         
        </SwiperSlide>
         <SwiperSlide className="cont">
@@ -42,7 +42,7 @@ export default function HomePage() {
               <button>READ MORE</button>
           </div>
 
-           <img className="" src={ph3} alt=""/> 
+           <img className="w-100" src={ph3} alt=""/> 
             </SwiperSlide>
 
       </Swiper>
@@ -50,6 +50,7 @@ export default function HomePage() {
        <div>
         <img src='../../assets/img/slide-3.jpg' alt=""/>
       </div> 
+
       <Emergency />
   
     </div>

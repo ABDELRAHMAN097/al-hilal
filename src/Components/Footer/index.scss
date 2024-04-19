@@ -42,7 +42,7 @@
   .middleTab {
     width: calc((100% - 2rem) / 4);
     @media screen and (max-width: 570px) {
-    width: calc((100% - 2rem) / 2);
+      width: 100%;
      
     }
     display: flex;

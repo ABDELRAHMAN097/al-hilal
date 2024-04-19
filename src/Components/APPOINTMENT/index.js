@@ -9,15 +9,18 @@ import { toast } from "react-toastify";
 export default function Index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [appointments, setAppointments] = useState([]);
-
+  //تحديد الطبيب حسب الاخيار من قائمة الاطباء
+  const [selectedDoctor, setSelectedDoctor] = useState("");
   useEffect(() => {
     const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
     setAppointments(storedAppointments);
+    localStorage.removeItem("appointments");
+
   }, []);
 
 
   function handelAppointment(values) {
-    const newValues = { ...values };
+    const newValues = { ...values, doctor: selectedDoctor };// تحديث القيمة بإضافة اسم الطبيب
     axios
       .post("https://boody-magdy.vercel.app/api/appointments/", newValues)
       .then((response) => {
@@ -26,27 +29,41 @@ export default function Index() {
         const updatedAppointments = [...appointments, response.data];
         setAppointments(updatedAppointments);
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+        
       })
       .catch((error) => {
         toast.success("حدث خطاء لم يتم الحجز");
         console.log.error("خطأ اثناء الاتصال بالخادم:", error);
       });
   }
-  // function handelDelete(id) {
-  //   axios.delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
-  //     .then((response) => {
-  //       toast.success(`تم حذف الموعد بنجاح`);
-  //       console.log(response.data);
-  //       // بعد حذف الموعد بنجاح، يمكنك تحديث القائمة لإزالة الموعد المحذوف
-  //       const updatedAppointments = appointments.filter(appointment => appointment.id !== id);
-  //       setAppointments(updatedAppointments);
-  //       localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
-  //     })
-  //     .catch((error) => {
-  //       toast.error("حدث خطأ أثناء محاولة حذف الموعد");
-  //       console.error("خطأ في طلب الحذف:", error);
-  //     });
-  // }
+ 
+
+  function handelDelete(id) {
+    axios
+      .delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
+      .then((response) => {
+        console.log('deleted appointment', response.data);
+        toast.success('تم حذف الحجز');
+        
+        // استرجاع البيانات من Local Storage
+        const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+        // حذف العنصر المطلوب
+        const updatedAppointments = storedAppointments.filter(appointment => appointment._id !== id);
+
+        // تحديث Local Storage بعد الحذف
+        localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+
+        // تحديث الحالة المحلية
+        setAppointments(updatedAppointments);
+      })
+      .catch((error) => {
+        toast.error('حدث خطاء أثناء حذف الحجز');
+        console.error('Error deleting appointment:', error);
+      });
+  }
+
+
   return (
     <div className="Appoint">
       <div className="APPOINTMENT">
@@ -119,13 +136,15 @@ export default function Index() {
                       type="text"
                       name="doctor"
                       placeholder=":اسم الدكتور"
+                      value={selectedDoctor} // استخدم قيمة selectedDoctor مباشرة هنا
+                      onChange={(e) => setSelectedDoctor(e.target.value)}
                     />
                     <Error>
                   <ErrorMessage name="doctor" />
                 </Error>
                   </div>
                   <div className="input-group">
-                  <label htmlFor="">التخصص</label>
+                  <label htmlFor="">الاطباء</label>
 
                   <select
                     className="input-Appoint specialty"
@@ -133,11 +152,13 @@ export default function Index() {
                     name="department"
                     required
                     placeholder=":القسم"
+                    onChange={(e) => setSelectedDoctor(e.target.value)}
                   >
-                    <option value="">اسنان</option>
-                    <option value="أطفال">أطفال</option>
-                    <option value="نساء وتوليد">نساء وتوليد</option>
-                    <option value="جراحة">جراحة</option>
+                    <option value="">اختر طبيبك</option>
+                    <option value="احمد">احمد</option>
+                    <option value="نادر">نادر</option>
+                    <option value="سامح">سامح</option>
+                    <option value="مازن">مازن</option>
                   </select>
                   </div>
 
@@ -185,8 +206,9 @@ export default function Index() {
             <td>{appointment.time}</td>
             <td>{appointment.date}</td>
             <td>{appointment.doctor}</td>
-            {/* <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>Delete</button> </td>
-            <td> <button className="btn btn-dager" onClick={() => handelDelete(appointment.id)}>Update </button> </td> */}
+            <td> 
+            <button onClick={() => handelDelete(appointment._id)}>حذف</button>
+            </td>
           </tr>
         ))}
       </tbody>

@@ -7,7 +7,7 @@ export default function Emergency() {
   const [authRecoil] = useRecoilState($AuthData)
 
   return (
-    <div>
+    <div className='w-100'>
     <div className='emergency'>
         <h1>في حالة طوارئ؟ هل تحتاج إلى المساعدة الآن؟</h1>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 

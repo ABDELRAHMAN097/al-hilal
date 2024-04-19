@@ -1,37 +1,33 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import React, { useState } from "react";
+import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-
+// import emailjs from 'emailjs-com';
 export default function index() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    mesage: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // يمكنك هنا إضافة التحقق من صحة البيانات وإرسالها إلى الخادم
-    console.log(formData);
-    // إعادة تعيين النموذج بعد الإرسال
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
+ 
+   // تعريف الدالة التي تقوم بمعالجة الإرسال
+  //  const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   // إرسال الرسالة باستخدام EmailJS
+  //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+  //     .then((result) => {
+  //       console.log('تم إرسال الرسالة بنجاح!', result.text);
+  //     }, (error) => {
+  //       console.error('حدث خطأ أثناء إرسال الرسالة:', error.text);
+  //     });
+
+  //   // اعادة تعيين حالة النموذج بعد الإرسال
+  //   setFormData({ name: '', email: '', subject: '', message: '' });
+  // };
+
+  // // تحديث الحالة عند تغيير القيم في النموذج
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
+ 
   return (
     <div className="contact">
       <div className="intro-services">
@@ -88,61 +84,57 @@ export default function index() {
 
         </div>
 
-        <form className="formContact" onSubmit={handleSubmit}>
+        {/* onSubmit={handleSubmit} */}
 
-
-          {/* name && email */}
-          <div className="name-email">
-            <div className="name">
-              <input htmlFor="name"
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="الاسم"
-              />
-            </div>
-            <div className="email">
-              <input htmlFor="email"
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="البريد الالكتروني"
-              />
-            </div>
-          </div>
-
-
-
-          <div>
-           
-            <input htmlFor="subject" className="sub"
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder=":الموضوع"
-              required
-            />
-          </div>
-          <div>
-            <textarea htmlFor="message"
-              id="message"
-              name="message"
-              value={formData.mesage}
-              onChange={handleChange}
-              required
-              placeholder="الرسالة:"
-            />
-          </div>
-          <button type="submit">إرسال</button>
-        </form>
+        <form className="formContact" >
+      {/* name && email */}
+      <div className="name-email">
+        <div className="name">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            // value={formData.name}
+            // onChange={handleChange}
+            required
+            placeholder="الاسم"
+          />
+        </div>
+        <div className="email">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            // value={formData.email}
+            // onChange={handleChange}
+            required
+            placeholder="البريد الالكتروني"
+          />
+        </div>
+      </div>
+      <div>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          // value={formData.subject}
+          // onChange={handleChange}
+          placeholder=":الموضوع"
+          required
+        />
+      </div>
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          // value={formData.message}
+          // onChange={handleChange}
+          required
+          placeholder="الرسالة:"
+        />
+      </div>
+      <button type="submit">إرسال</button>
+    </form>
       </div>
       
     </div>

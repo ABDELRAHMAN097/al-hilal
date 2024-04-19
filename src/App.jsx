@@ -10,6 +10,8 @@ import Footer from "./Components/Footer";
 import Notfound from "./Components/Notfound/Notfound.js";
 import Login from "./pages/Login/Login.js";
 import Register from "./pages/Register/Register.js";
+import Dashboard from './pages/Dashboard/Dashboard.js'
+import Users from "./pages/User/Users.js"
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
@@ -37,6 +39,16 @@ export default function App() {
               <Route path="contact" element={
                 <IsloggedIn>
                   <Contact />
+                </IsloggedIn>
+              } />
+              <Route path="Dashboard" element={
+                <IsloggedIn>
+                  <Dashboard />
+                </IsloggedIn>
+              } />
+              <Route path="Users" element={
+                <IsloggedIn>
+                  <Users />
                 </IsloggedIn>
               } />
               <Route path="APPOINTMENT" element={

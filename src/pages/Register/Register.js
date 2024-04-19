@@ -41,28 +41,28 @@ const navigate = useNavigate()
         {({ errors }) => {
           return (
             <Form>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Full Name</label>
                 <Field type="text" name="fullName" placeholder="Full Name" />
                 <Error>
                   <ErrorMessage name="name" />
                 </Error>
               </div>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Phone numper</label>
                 <Field type="text" name="phone" placeholder="Phone-numper" />
                 <Error>
                   <ErrorMessage name="name" />
                 </Error>
               </div>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Email</label>
                 <Field type="text" name="email" placeholder="Email" />
                 <Error>
                   <ErrorMessage name="email" />
                 </Error>
               </div>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Passwoed</label>
                 <Field type="password" name="password" placeholder="Passwoed" />
 
@@ -70,7 +70,7 @@ const navigate = useNavigate()
                   <ErrorMessage name="password" />
                 </Error>
               </div>
-              <div className="input-group">
+              <div className="input-login">
                 <label htmlFor="">Confirm Password</label>
                 <Field
                   type="password"
@@ -82,7 +82,7 @@ const navigate = useNavigate()
                 </Error>
               </div>
               <div className="mb-3 ml-3">
-                already have an acount? <Link to="/login">Login Now</Link>
+                already have an acount? <Link className="moveTo" to="/login">Login Now</Link>
               </div>
               <div className="d-flex justify-end">
                 <button type="submit">Register</button>
