@@ -1,17 +1,17 @@
-/* eslint-disable no-undef */
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import './index.scss'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  // const [admins, setAdmins] = useState([]);
 
   // تعريف دالة لتغيير حالة المستخدم من "user" إلى "owner"
   function changeUserToOwner(id) {
     // عملية تعديل الحالة
     const newData = {
       role: 'owner' // تغيير قيمة الدور إلى "owner"
-      
     };
 
     axios.patch(`https://boody-magdy.vercel.app/api/users/${id}`, newData)
@@ -39,15 +39,18 @@ export default function Users() {
       });
   }
 
+   
+
   // تنفيذ دالة استرجاع البيانات عند تحميل المكون
   useEffect(() => {
+    
     getAllUsers();
+    // getAdmins(); // استدعاء دالة getAdmins لطباعة المستخدمين الـ owner
   }, []);
 
   function deleteUser(id) {
     axios.delete(`https://boody-magdy.vercel.app/api/users/${id}`)
       .then(response => {
-        console.log('User deleted successfully:', response.data);
         // بعد حذف المستخدم بنجاح، يجب تحديث قائمة المستخدمين
         getAllUsers();
         toast.success("تم حذف المستخدم بنجاح");
@@ -61,28 +64,31 @@ export default function Users() {
   }
 
   return (
-    <div>
+    <div  className='w-70 dash-user'>
       <h1>Users List</h1>
-      <table>
+      <table className='table-data-user'>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
+            <th className='email'>Email</th>
             <th>Role</th>
             <th>Action</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {users.map(user => (
             <tr key={user._id}>
-              <td>{user._id}</td>
+              
               <td>{user.fullName}</td>
-              <td>{user.email}</td>
+              <td className='email'>{user.email}</td>
               <td>{user.role}</td>
+              
+                
+              
               <td>
                 {/* إضافة زر لتغيير حالة المستخدم */}
-                <button onClick={() => changeUserToOwner(user._id)}>Change to Owner</button>
+                <button onClick={() => changeUserToOwner(user._id)}>promotion</button>
               </td>
               <td>
                 {/* إضافة زر لتغيير حالة المستخدم */}
@@ -91,7 +97,7 @@ export default function Users() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>  
     </div>
   );
 }

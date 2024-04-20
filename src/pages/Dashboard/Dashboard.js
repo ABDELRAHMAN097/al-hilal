@@ -1,5 +1,6 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import './index.scss'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -38,12 +39,12 @@ export default function Dashboard() {
     }
 
     return (
-        <div>
-            <Link className='btn btn-success' to={"/users"}> Users </Link>
-            <div className='users-data'>
+        <div className='dash'>
+            <Link className='btn-users' to={"/users"}> Users </Link>
+            <div className='w-100'>
                 {appointments.length > 0 && (
-                    <div className="Appoint-data">
-                        <table>
+                    <div className="table-data">
+                        <table className='w-100'>
                             <thead>
                                 <tr>
                                     <th>اسم الحالة</th>

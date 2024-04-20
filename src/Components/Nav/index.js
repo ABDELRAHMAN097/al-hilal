@@ -8,6 +8,7 @@ import logo from '../../assets/img/logo.png'
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
 
+
 export default function index() {
    const [authRecoil] = useRecoilState($AuthData)
       const [isopen , setisopen] = useState(false)
@@ -51,8 +52,12 @@ export default function index() {
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/doctors">Doctors</Link>
              </li>
-             <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link>
+       
+            <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/Dashboard">لوحة التحكم</Link>            
+            <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
+                           
              </ul>
+             
 
             : (<Fragment> 
              <li className='font-semibold my-7 md:my-0 md:ml-8'>

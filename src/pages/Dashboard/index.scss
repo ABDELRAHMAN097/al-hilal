@@ -1,0 +1,31 @@
+.btn-users{
+    background-color: var(--blueColor);
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+}
+.dash{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    gap:1rem
+}
+.table-data{
+    width: 100%;
+    th,td{
+        text-align: center;
+        padding: 5px 10px;
+        border: solid 0.1em var(--blueColor);
+        @media screen and (max-width:767px){
+            font-size: 10px;
+            padding: 5px;
+        }
+    }
+    th{
+        background-color: var(--blueColor);
+        color: white;
+    }
+}
