@@ -8,5 +8,4 @@ export default function IsloggedIn({children}) {
   const [authRecoil] = useRecoilState($AuthData);
     if(!authRecoil.isAuth) return <Navigate to= '/login'/> 
   return <Fragment>{children}</Fragment>
-  
 }

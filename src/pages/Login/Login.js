@@ -9,15 +9,17 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
+import $authOwenr from '../../store/UserStatus'
 
 export default function Login() {
   const navigate = useNavigate();
   const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
+  const [authowenr , setauthowenr] = useRecoilState($authOwenr)
 console.log(authRecoil)
   function handleLogin (values){
     const newData ={...values}
     delete newData.confirm_password;
-    console.log(newData)
+    
      axios.post("https://boody-magdy.vercel.app/api/users/login" , newData)
      .then(userData =>{
       if(userData.data){
@@ -33,6 +35,14 @@ console.log(authRecoil)
       }else{
         toast.error("حدث خطاء")
       }
+      
+        const status = userData.data.role;
+        
+        setauthowenr({
+            isOwenr : true,
+            role: status
+        });
+        console.log(authowenr); // هنا يتم طباعة قيمة الـ authowenr بعد التحديث
      })
       .catch(error => {
             console.error("خطأ في الاتصال بالخادم:", error);

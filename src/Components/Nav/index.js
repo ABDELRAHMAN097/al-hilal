@@ -7,10 +7,13 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png'
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
+import $authOwenr from '../../store/UserStatus';
 
 
 export default function index() {
    const [authRecoil] = useRecoilState($AuthData)
+  const [authowenr] = useRecoilState($authOwenr)
+
       const [isopen , setisopen] = useState(false)
       return (
         <div className='shadow-md w-full' id='nav'>
@@ -36,29 +39,35 @@ export default function index() {
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="">Home</Link>
              </li>
-            
-            {authRecoil.isAuth ?
-             <ul className= {`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[2]
-             left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in ${isopen ? 'top-12' : 'top-[-490px]'}`}>
-                <li className='font-semibold my-7 md:my-0 md:ml-8'>
+             <li className='font-semibold my-7 md:my-0 md:ml-8'>
                  <Link to="/about">About</Link>
                </li>
                <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/services">Services</Link>
-             </li>
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
+               </li>
+               <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/contact">Contact</Link>
              </li>
+            {authRecoil.isAuth ?
+             <ul className= {`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[2]
+             left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in ${isopen ? 'top-12' : 'top-[-490px]'}`}>
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/doctors">Doctors</Link>
              </li>
        
-            <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/Dashboard">لوحة التحكم</Link>            
-            <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
-                           
+            {authowenr.isOwenr? (
+               <Fragment>
+                  <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
+                  <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/Dashboard">لوحة التحكم</Link>   
+               </Fragment>
+               )
+               :(
+                  <Fragment>
+                     <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
+                  </Fragment>
+               )
+               }
              </ul>
-             
-
             : (<Fragment> 
              <li className='font-semibold my-7 md:my-0 md:ml-8'>
                 <Link to="/register">register</Link>
@@ -67,6 +76,8 @@ export default function index() {
                 <Link to="/login">Login</Link>
              </li>
                </Fragment>)}   
+
+               
             </ul>
          
           </div>

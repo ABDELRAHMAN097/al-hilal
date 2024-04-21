@@ -27,19 +27,19 @@ export default function App() {
             <Route path="/">
               <Route index element={<HomePage />} />
               <Route path="about" element={
-                <IsloggedIn>
+                <NotLoggedIn>
                   <About />
-                </IsloggedIn>
+                </NotLoggedIn>
               } />
               <Route path="services" element={
-                <IsloggedIn>
+                <NotLoggedIn>
                   <Services />
-                </IsloggedIn>
+                </NotLoggedIn>
               } />
               <Route path="contact" element={
-                <IsloggedIn>
+                <NotLoggedIn>
                   <Contact />
-                </IsloggedIn>
+                </NotLoggedIn>
               } />
               <Route path="Dashboard" element={
                 <IsloggedIn>
