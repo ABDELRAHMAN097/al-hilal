@@ -16,10 +16,12 @@ export default function Login() {
   const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
   const [authowenr , setauthowenr] = useRecoilState($authOwenr)
 console.log(authRecoil)
+
+
+
   function handleLogin (values){
     const newData ={...values}
     delete newData.confirm_password;
-    
      axios.post("https://boody-magdy.vercel.app/api/users/login" , newData)
      .then(userData =>{
       if(userData.data){
@@ -29,7 +31,7 @@ console.log(authRecoil)
           user : userData.data.fullName
         }
         setauthRecoil(localData)
-       localStorage.setItem('loginUser' , JSON.stringify(localData))
+       localStorage.setItem('loginUser' , JSON.stringify(userData))
         navigate('/APPOINTMENT')
         console.log(userData.data)
       }else{
