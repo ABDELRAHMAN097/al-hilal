@@ -17,6 +17,8 @@ import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 import NotLoggedIn from "./Components/ProtectedRoutes/NotLoggedIn.js";
 import IsloggedIn from "./Components/ProtectedRoutes/IsloggedIn.js";
+import IsAdmin from "./Components/ProtectedRoutes/IsAdmin.js";
+import IsOwenr from "./Components/ProtectedRoutes/IsOwenr.js";
 export default function App() {
   return (
     <div className="App">
@@ -43,12 +45,16 @@ export default function App() {
               } />
               <Route path="Dashboard" element={
                 <IsloggedIn>
-                  <Dashboard />
+                  <IsAdmin>
+                   <Dashboard />
+                  </IsAdmin>
                 </IsloggedIn>
               } />
               <Route path="Users" element={
                 <IsloggedIn>
+                  <IsOwenr>
                   <Users />
+                  </IsOwenr>
                 </IsloggedIn>
               } />
               <Route path="APPOINTMENT" element={
