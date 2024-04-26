@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import React from "react";
+import React, { useState } from "react";
 import "./Register.scss";
 import Error from "../../Erorr/Error"
 import { Link } from "react-router-dom";
@@ -8,25 +8,39 @@ import RegisterSchema from "../../Schemas/RegisterSchema";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
-
+import { RingLoader } from "react-spinners";
 export default function Register() {
-const navigate = useNavigate()
-  function handleRegister (values){
-    const newData ={...values}
-    delete newData.confirm_password;
-    console.log(newData)
-    axios.post("https://boody-magdy.vercel.app/api/users/signup" , newData)
-    .then(response =>{
-      toast.success(`تم التسجيل يرايق` , {autoClose:2000});
+  const [loading, setLoading] = useState(false);
 
-      navigate('/login')
-      console.log(response)
+//#######################################################
+const navigate = useNavigate()
+
+function handleRegister(values) {
+  setLoading(true);
+  const newData = { ...values };
+  delete newData.confirm_password;
+  console.log(newData);
+  axios
+    .post("https://boody-magdy.vercel.app/api/users/signup", newData)
+    .then((response) => {
+      toast.success(`تم  انشاء اكونت بنجاح`, { autoClose: 2000 });
+      navigate("/login");
+      setLoading(false);
+      console.log(response);
     })
-    .catch(
-      errors =>console.log(errors))}
+    .catch((errors) => console.log(errors))
+    .finally(() => {
+      setLoading(false);
+    });
+}
 
   return (
     <div className="auth-form m-auto my-5">
+       {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
+       <div className="loading-overlay">
+       <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+     </div>
+      )}
       <Formik
         initialValues={{
           fullName: "",

@@ -5,10 +5,14 @@ import Error from "../../Erorr/Error"
 import { ErrorMessage , Formik, Form, Field } from "formik";
 import AppointSchemas from "../../Schemas/AppointSchemas";
 import { toast } from "react-toastify";
+import { RingLoader } from "react-spinners";
+
 
 export default function Index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   //تحديد الطبيب حسب الاخيار من قائمة الاطباء
   // const [selectedDoctor, setSelectedDoctor] = useState("");
   useEffect(() => {
@@ -20,6 +24,8 @@ export default function Index() {
 
 
   function handelAppointment(values) {
+  setLoading(true);
+
     const newValues = { ...values};// تحديث القيمة بإضافة اسم الطبيب
     axios
       .post("https://boody-magdy.vercel.app/api/appointments/", newValues)
@@ -29,21 +35,27 @@ export default function Index() {
         const updatedAppointments = [...appointments, response.data];
         setAppointments(updatedAppointments);
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+      setLoading(false);
         
       })
       .catch((error) => {
         toast.success("حدث خطاء لم يتم الحجز");
         console.log.error("خطأ اثناء الاتصال بالخادم:", error);
+      setLoading(false);
+
       });
   }
  
 
   function handelDelete(id) {
+  setLoading(true);
+
     axios
       .delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
       .then((response) => {
         console.log('deleted appointment', response.data);
         toast.success('تم حذف الحجز');
+      setLoading(false);
         
         // استرجاع البيانات من Local Storage
         const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
@@ -60,6 +72,8 @@ export default function Index() {
       .catch((error) => {
         toast.error('حدث خطاء أثناء حذف الحجز');
         console.error('Error deleting appointment:', error);
+      setLoading(false);
+
       });
   }
 
@@ -75,6 +89,11 @@ export default function Index() {
           منك تأكيد الحجز لإتمام العملية شكرًا لاستخدامك نظام حجز المستشفى
           الإلكتروني. نتطلع لخدمتك وتقديم الرعاية الصحية المناسبة لك
         </p>
+        {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
+       <div className="loading-overlay">
+       <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+     </div>
+      )}
 
         <Formik
           initialValues={{
@@ -143,7 +162,7 @@ export default function Index() {
                   <ErrorMessage name="doctor" />
                 </Error>
                   </div>
-                  <div className="input-group">
+                  {/* <div className="input-group">
                   <label htmlFor="">الاطباء</label>
 
                   <select
@@ -160,7 +179,7 @@ export default function Index() {
                     <option value="">سامح</option>
                     <option value="">مازن</option>
                   </select>
-                  </div>
+                  </div> */}
 
 
                   {/* <div className="input-group"></div>
@@ -190,7 +209,7 @@ export default function Index() {
       </div>
       {appointments.length > 0 && (
   <div className="Appoint-data">
-    <table>
+    <table className="table-data-user">
       <thead>
         <tr>
           <th>اسم الحالة</th>

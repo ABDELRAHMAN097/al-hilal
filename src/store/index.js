@@ -1,12 +1,14 @@
 import { atom } from "recoil";
 
-const localData = JSON.parse(localStorage.getItem('loginUser')) || [];
-console.log(localData.data)
- const $AuthData = atom({
+const localData = JSON.parse(localStorage.getItem('loginUser'));
+
+const $AuthData = atom({
   key: "$AuthData",
   default: localData || {
-    isAuth : localData?.data ? true : false,
-    user :  localData?.data?.fullName || null
+    isAuth: false,
+    user: null,
+    role: null || localData.role
   },
 });
-export default $AuthData
+
+export default $AuthData;

@@ -3,10 +3,17 @@ import './index.scss'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { RingLoader } from "react-spinners";
+import { useRecoilState } from 'recoil';
+import $AuthData from "../../store/index";
+
 
 export default function Dashboard() {
     const [appointments, setAppointments] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [authRecoil] = useRecoilState($AuthData);
 
+ 
     // استرجاع جميع المواعيد
     function getAllAppointments() {
         axios.get("https://boody-magdy.vercel.app/api/appointments/")
@@ -25,22 +32,34 @@ export default function Dashboard() {
 
     // حذف موعد
     function deleteAppointment(id) {
+        setLoading(true);
         axios.delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
             .then(response => {
                 console.log('Appointment deleted successfully:', response.data);
                 // بعد حذف الموعد بنجاح، يتم تحديث قائمة المواعيد
                 toast.success('تم حذف الحجز')
                 getAllAppointments();
+                setLoading(false);
             })
             .catch(error => {
                 toast.error('حدث خطاء اثناء حذف الحجز')
                 console.error('Error deleting appointment:', error);
+                setLoading(false);
             });
     }
 
     return (
         <div className='dash'>
-            <Link className='btn-users' to={"/users"}> Users </Link>
+             {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
+       <div className="loading-overlay">
+       <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+     </div>
+      )}
+            {authRecoil.role === "owner"?
+           ( <Link className='btn-users' to={"/users"}> Users </Link>)
+            :
+            (<Link className='btn-users' to={"/"}> Home </Link>)
+        }
             <div className='w-100'>
                 {appointments.length > 0 && (
                     <div className="table-data">

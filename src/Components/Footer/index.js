@@ -56,6 +56,19 @@ export default function index() {
           {authRecoil.isAuth ?
         
             <ul>
+              <li className='font-semibold md:my-0'>
+             <Link to="/">Home</Link>
+
+            </li>
+             <li className='font-semibold md:my-0 '>
+                 <Link to="/about">About</Link>
+               </li>
+               <li className='font-semibold md:my-0 '>
+                <Link to="/services">Services</Link>
+             </li>
+             <li className='font-semibold md:my-0 '>
+                <Link to="/contact">Contact</Link>
+             </li>
                 
              <li className='font-semibold md:my-0 '>
                 <Link to="/doctors">Doctors</Link>
@@ -83,6 +96,12 @@ export default function index() {
              </li>
              <li className='font-semibold md:my-0 '>
                 <Link to="/contact">Contact</Link>
+             </li>
+             <li className='font-semibold md:my-0 '>
+                <Link to="/register">Register</Link>
+             </li>
+             <li className='font-semibold md:my-0 '>
+                <Link to="/login">login</Link>
              </li>
             
               </div>

@@ -1,101 +1,85 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import React, { Fragment, useState } from 'react'
-import './index.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
-import logo from '../../assets/img/logo.png'
+import React, { Fragment, useState } from "react";
+import "./index.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.png";
 import { useRecoilState } from "recoil";
-import $AuthData from '../../store/index'
-import $authOwenr from '../../store/UserStatus';
+import $AuthData from "../../store/index";
 
-
-export default function index() {
-   const [authRecoil] = useRecoilState($AuthData)
-  const [authowenr] = useRecoilState($authOwenr)
-
-      const [isopen , setisopen] = useState(false)
-      return (
-        <div className='shadow-md w-full' id='nav'>
-          <div className='md:flex items-center justify-between  py-4 px-8 bg-transparent'>
-          
-              {/* logo */}
-           <div className='logo flex text-2xl cursor-pointer  items-center gap-2'>
-             <img src={logo} alt=''/>
-            </div>
-
-            {/* menue bar icon */}
-    
-            <div onClick={()=> setisopen(!isopen)} className='w-10 h-10 absolute right-8 top-6 md:hidden'>    
-            {
-                isopen ? <FontAwesomeIcon className='w-7 h-7 z-ind' icon={faXmark}/> : <FontAwesomeIcon className='w-7 h-7' icon={faBars}/>
-            }    
-            </div>
-    
-            {/* {links} */}
-            <ul className= {`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[2]
-             left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in ${isopen ? 'top-12' : 'top-[-490px]'}`}>
-            
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="">Home</Link>
-             </li>
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                 <Link to="/about">About</Link>
-               </li>
-               <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/services">Services</Link>
-               </li>
-               <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/contact">Contact</Link>
-             </li>
-            {authRecoil.isAuth ?
-             <ul className= {`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[2]
-             left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in ${isopen ? 'top-12' : 'top-[-490px]'}`}>
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/doctors">Doctors</Link>
-             </li>
-       
-            {authowenr.isOwenr? (
-               <Fragment>
-                  <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
-                  <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/Dashboard">لوحة التحكم</Link>   
-               </Fragment>
-               )
-               :(
-                  <Fragment>
-                     <Link className='btn bg-blue-300  py-1 px-3 md:ml-3 rounded md:static text-black' to= "/APPOINTMENT"> إحجز موعد</Link> 
-                  </Fragment>
-               )
-               }
-             </ul>
-            : (<Fragment> 
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/register">register</Link>
-             </li>
-             <li className='font-semibold my-7 md:my-0 md:ml-8'>
-                <Link to="/login">Login</Link>
-             </li>
-               </Fragment>)}   
-
-               
-            </ul>
-         
-          </div>
+export default function Navbar() {
+  const [authRecoil] = useRecoilState($AuthData);
+  const [isopen, setisopen] = useState(false);
+  return (
+    <div className="shadow-md w-full" id="nav">
+      <div className="md:flex items-center justify-between py-4 px-8 bg-transparent">
+        <div className="logo flex text-2xl cursor-pointer items-center gap-2">
+          <img src={logo} alt="" />
         </div>
-      )
+        <div
+          onClick={() => setisopen(!isopen)}
+          className="w-10 h-10 absolute right-8 top-6 md:hidden"
+        >
+          {isopen ? (
+            <FontAwesomeIcon className="w-7 h-7 z-ind" icon={faXmark} />
+          ) : (
+            <FontAwesomeIcon className="w-7 h-7" icon={faBars} />
+          )}
+        </div>
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[2] left-0 w-full md:w-auto md:pl-0 pl-9 bg-white transition-all duration-500 ease-in ${
+            isopen ? "top-12" : "top-[-490px]"
+          }`}
+        >
+          <li className="font-semibold my-7 md:my-0 md:ml-8">
+            <Link to="">Home</Link>
+          </li>
+          <li className="font-semibold my-7 md:my-0 md:ml-8">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="font-semibold my-7 md:my-0 md:ml-8">
+            <Link to="/services">Services</Link>
+          </li>
+          <li className="font-semibold my-7 md:my-0 md:ml-8">
+            <Link to="/contact">Contact</Link>
+          </li>
+          {authRecoil.isAuth && (
+            <Fragment>
+              <li className="font-semibold my-7 md:my-0 md:ml-8">
+                <Link to="/doctors">Doctors</Link>
+              </li>
+
+              <li className="font-semibold my-7 md:my-0 md:ml-8">
+                {authRecoil.role === "owner" || authRecoil.role === "admin" ? (
+                  <Link
+                    className="btn bg-blue-300 py-1 px-3 md:ml-3 rounded md:static text-black"
+                    to="/Dashboard"
+                  >
+                    لوحة التحكم
+                  </Link>
+                ) : (
+                  <Link
+                    className="btn bg-blue-300 py-1 px-3 md:ml-3 rounded md:static text-black"
+                    to="/APPOINTMENT"
+                  >
+                    إحجز موعد
+                  </Link>
+                )}
+              </li>
+            </Fragment>
+          )}
+          {!authRecoil.isAuth && (
+            <Fragment>
+              <li className="font-semibold my-7 md:my-0 md:ml-8">
+                <Link to="/register">Register</Link>
+              </li>
+              <li className="font-semibold my-7 md:my-0 md:ml-8">
+                <Link to="/login">Login</Link>
+              </li>
+            </Fragment>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
 }
-
-
-
-
-
-
-           
-
-
-
-
-
-
-
-

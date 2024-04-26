@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import Error from "../../Erorr/Error"
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import LoginSchema from "../../Schemas/LoginSchema";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
-import $authOwenr from '../../store/UserStatus'
+import $UserStatus from '../../store/UserStatus';
+import { RingLoader } from "react-spinners";
 
 export default function Login() {
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
   const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
-  const [authowenr , setauthowenr] = useRecoilState($authOwenr)
-console.log(authRecoil)
-
-
-
+  const [userStatus, setUserStatus] = useRecoilState($UserStatus); 
+  console.log(authRecoil)
+  console.log(userStatus)
   function handleLogin (values){
+  setLoading(true);
     const newData ={...values}
     delete newData.confirm_password;
      axios.post("https://boody-magdy.vercel.app/api/users/login" , newData)
@@ -28,31 +29,33 @@ console.log(authRecoil)
         toast.success(`مرحباً بك ${userData.data.fullName}`);
         const localData = {
           isAuth : true,
-          user : userData.data.fullName
+          user : userData.data.fullName,
+          role : userData.data.role
         }
         setauthRecoil(localData)
-       localStorage.setItem('loginUser' , JSON.stringify(userData))
-        navigate('/APPOINTMENT')
+       localStorage.setItem('loginUser' , JSON.stringify(localData))
         console.log(userData.data)
+
+        setUserStatus(userStatus);
+        localStorage.setItem('status', JSON.stringify(userStatus))
+        console.log(userData.data.role)
       }else{
         toast.error("حدث خطاء")
       }
-      
-        const status = userData.data.role;
-        
-        setauthowenr({
-            isOwenr : true,
-            role: status
-        });
-        console.log(authowenr); // هنا يتم طباعة قيمة الـ authowenr بعد التحديث
      })
       .catch(error => {
             console.error("خطأ في الاتصال بالخادم:", error);
             toast.error("حدث خطأ أثناء محاولة الاتصال بالخادم");
+            setLoading(false);
         });
 }
   return (
     <div className="auth-form m-auto my-5">
+       {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
+       <div className="loading-overlay">
+       <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+     </div>
+      )}
       <Formik
         initialValues={{
           email: "",
