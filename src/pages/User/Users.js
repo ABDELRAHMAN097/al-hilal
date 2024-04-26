@@ -48,7 +48,6 @@ export default function Users() {
         setLoading(false);
       });
   }
-  // تعريف دالة لتغيير حالة المستخدم من "user" إلى "owner"
   function changeUserToOwner(id) {
     setLoading(true);
     // عملية تعديل الحالة
@@ -57,8 +56,8 @@ export default function Users() {
     };
     axios.patch(`https://boody-magdy.vercel.app/api/users/${id}`, newData)
       .then(response => {
-        console.log('User status updated successfully:', response.data);
-        //  تحميل البيانات بعد تعديل لحالةالمستخدم
+        console.log('User status updated successfully:', response.data.phone);
+        //  تحميل البيانات بعد تعديل حالةالمستخدم
         getAllUsers();
         toast.success("تم تعيين الادمن بنجاح");
         setLoading(false);
@@ -72,20 +71,19 @@ export default function Users() {
 
   // دالة لاسترجاع بيانات المستخدمين
   function getAllUsers() {
+    setLoading(true);
     axios.get("https://boody-magdy.vercel.app/api/users")
       .then(response => {
         setUsers(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error('Error fetching users:', error);
+        setLoading(false);
       });
   }
-
-   
-
   //   استرجاع البيانات عند التحميل 
   useEffect(() => {
-    
     getAllUsers();
     // getAdmins(); // استدعاء دالة getAdmins لطباعة المستخدمين الـ owner
   }, []);
@@ -119,6 +117,7 @@ export default function Users() {
           <tr>
             <th>Name</th>
             <th className='email'>Email</th>
+            <th className='email'>phone</th>
             <th>Role</th>
             <th>Action</th>
             <th>Delete</th>
@@ -130,6 +129,7 @@ export default function Users() {
               
               <td>{user.fullName}</td>
               <td className='email'>{user.email}</td>
+              <td className='email'>{user.phone}</td>
               <td>{user.role}</td>
               
                 

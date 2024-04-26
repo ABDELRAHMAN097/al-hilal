@@ -16,13 +16,16 @@ export default function Dashboard() {
  
     // استرجاع جميع المواعيد
     function getAllAppointments() {
+        setLoading(true);
         axios.get("https://boody-magdy.vercel.app/api/appointments/")
             .then(response => {
                 setAppointments(response.data);
+                setLoading(false);
             })
             .catch(error => {
                 toast.error('حدث خطاء اثناء تحميل المواعيد')
                 console.error('Error fetching appointments:', error);
+                setLoading(false);
             });
     }
 

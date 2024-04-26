@@ -9,6 +9,7 @@ import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { RingLoader } from "react-spinners";
+
 export default function Register() {
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +20,9 @@ function handleRegister(values) {
   setLoading(true);
   const newData = { ...values };
   delete newData.confirm_password;
-  console.log(newData);
+  console.log(newData.phone);
+  
+  console.log(newData.password);
   axios
     .post("https://boody-magdy.vercel.app/api/users/signup", newData)
     .then((response) => {
@@ -44,7 +47,7 @@ function handleRegister(values) {
       <Formik
         initialValues={{
           fullName: "",
-          phone: "",
+          phone: "", // إضافة حقل الهاتف هنا
           email: "",
           password: "",
           confirm_password: "",

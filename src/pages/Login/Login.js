@@ -2,23 +2,18 @@ import React, { useState } from "react";
 import "./Login.scss";
 import Error from "../../Erorr/Error"
 import { Link } from "react-router-dom";
-
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import LoginSchema from "../../Schemas/LoginSchema";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
-import $UserStatus from '../../store/UserStatus';
 import { RingLoader } from "react-spinners";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-
   const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
-  const [userStatus, setUserStatus] = useRecoilState($UserStatus); 
   console.log(authRecoil)
-  console.log(userStatus)
   function handleLogin (values){
   setLoading(true);
     const newData ={...values}
@@ -35,9 +30,6 @@ export default function Login() {
         setauthRecoil(localData)
        localStorage.setItem('loginUser' , JSON.stringify(localData))
         console.log(userData.data)
-
-        setUserStatus(userStatus);
-        localStorage.setItem('status', JSON.stringify(userStatus))
         console.log(userData.data.role)
       }else{
         toast.error("حدث خطاء")
