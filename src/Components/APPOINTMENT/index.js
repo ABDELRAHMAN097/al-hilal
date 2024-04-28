@@ -13,8 +13,8 @@ export default function Index() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  //تحديد الطبيب حسب الاخيار من قائمة الاطباء
-  // const [selectedDoctor, setSelectedDoctor] = useState("");
+  // تحديد الطبيب حسب الاخيار من قائمة الاطباء
+  const [selectedDoctor, setSelectedDoctor] = useState("");
   useEffect(() => {
     const storedAppointments = JSON.parse(localStorage.getItem("appointments")) || [];
     setAppointments(storedAppointments);
@@ -155,13 +155,34 @@ export default function Index() {
                       type="text"
                       name="doctor"
                       placeholder=":اسم الدكتور"
-                      // value={selectedDoctor} 
-                      // onChange={(e) => setSelectedDoctor(e.target.value)}
+                      value={selectedDoctor} 
+                      onChange={(e) => setSelectedDoctor(e.target.value)}
                     />
                     <Error>
                   <ErrorMessage name="doctor" />
                 </Error>
                   </div>
+
+                  <div className="input-group">
+                  <select className="input-Appoint select"
+                   id="department"
+                   name="department"
+                   required
+                  onChange={(e) => setSelectedDoctor(e.target.value)}
+                  >
+                    <option value="">اختر تخصصًا...</option>
+                    <option value="د. أحمد">طبيب القلب - د. أحمد</option>
+                    <option value="د. محمد">طبيب العظام - د. محمد</option>
+                    <option value="د. سارة">طبيب الأطفال - د. سارة</option>
+                    <option value="د. يوسف">طبيب الجراحة - د. يوسف</option>
+                    <option value="د. ليلى">طبيب النساء - د. ليلى</option>
+                  </select>
+                  </div>
+
+                  
+
+                  
+
                   {/* <div className="input-group">
                   <label htmlFor="">الاطباء</label>
 

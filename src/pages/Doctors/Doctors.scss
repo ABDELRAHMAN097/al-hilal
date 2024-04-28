@@ -1,9 +1,11 @@
 .doctors{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 20px;
     @media screen and (max-width:767px){
         flex-direction: column;
     }
