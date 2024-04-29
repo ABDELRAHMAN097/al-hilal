@@ -28,21 +28,9 @@ export default function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
-              <Route path="about" element={
-                <NotLoggedIn>
-                  <About />
-                </NotLoggedIn>
-              } />
-              <Route path="services" element={
-                <NotLoggedIn>
-                  <Services />
-                </NotLoggedIn>
-              } />
-              <Route path="contact" element={
-                <NotLoggedIn>
-                  <Contact />
-                </NotLoggedIn>
-              } />
+              <Route path="about" element={<About />} />
+              <Route path="services" element={<Services /> } />
+              <Route path="contact" element={<Contact /> } />
               <Route path="Dashboard" element={
                 <IsloggedIn>
                   <IsAdmin>

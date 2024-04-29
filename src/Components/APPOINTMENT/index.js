@@ -6,7 +6,7 @@ import { ErrorMessage , Formik, Form, Field } from "formik";
 import AppointSchemas from "../../Schemas/AppointSchemas";
 import { toast } from "react-toastify";
 import { RingLoader } from "react-spinners";
-
+import appointPhoto from '../../assets/img/appointment.jpg'
 
 export default function Index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -108,6 +108,9 @@ export default function Index() {
           {({ errors }) => {
             return (
               <Form>
+                  <div className="appoint-photo">
+                <img src={appointPhoto} alt="appointPhoto"/>
+              </div>
                 <div className="inputs">
                   <div className="input-group">
                     <label htmlFor="">Name</label>
@@ -178,44 +181,7 @@ export default function Index() {
                     <option value="د. ليلى">طبيب النساء - د. ليلى</option>
                   </select>
                   </div>
-
-                  
-
-                  
-
-                  {/* <div className="input-group">
-                  <label htmlFor="">الاطباء</label>
-
-                  <select
-                    className="input-Appoint specialty"
-                    id="department"
-                    name="department"
-                    required
-                    placeholder=":القسم"
-                    // onChange={(e) => setSelectedDoctor(e.target.value)}
-                  >
-                    <option value="">اختر طبيبك</option>
-                    <option value="">احمد</option>
-                    <option value="">نادر</option>
-                    <option value="">سامح</option>
-                    <option value="">مازن</option>
-                  </select>
-                  </div> */}
-
-
-                  {/* <div className="input-group"></div>
-                  <select
-                    className="input-Appoint"
-                    id="doctor"
-                    name="doctor"
-                    required
-                    placeholder=":الطبيب"
-                  >
-                    <option value="دكتور أحمد">دكتور أحمد</option>
-                    <option value="دكتورة سارة">دكتورة سارة</option>
-                    <option value="دكتور محمد">دكتورة سلمي</option>
-                    <option value="دكتور محمد">دكتور محمد </option>
-                  </select> */}
+                 
                 <div  className="input-group">
 
                 <button className="btn-ll" type="submit">
@@ -228,6 +194,7 @@ export default function Index() {
           }}
         </Formik>
       </div>
+
       {appointments.length > 0 && (
   <div className="Appoint-data">
     <table className="table-data-user">

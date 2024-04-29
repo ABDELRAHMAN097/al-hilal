@@ -82,7 +82,7 @@ export default function index() {
              </ul>
          
             : (<Fragment> 
-              <div className="tab">
+             
              
             <li className='font-semibold md:my-0'>
              <Link to="/">Home</Link>
@@ -104,7 +104,7 @@ export default function index() {
                 <Link to="/login">login</Link>
              </li>
             
-              </div>
+            
                </Fragment>)}  
           </ul>
           </div>

@@ -58,7 +58,7 @@ export default function Login() {
         >
         {({ errors }) => {
           return (
-            <Form>
+            <Form className="loginForm">
               <div className="input-login">
                 <label htmlFor="">Email</label>
                 <Field type="text" name="email" placeholder="Email" />
@@ -76,7 +76,7 @@ export default function Login() {
               <div className="mb-3 ml-3">
                 don{" ُ"}t have an acount? <Link className="moveTo" to="/Register">Register Now</Link>
               </div>
-              <div className="d-flex justify-end">
+              <div className="done">
                 <button type="submit">Login</button>
               </div>
             </Form>

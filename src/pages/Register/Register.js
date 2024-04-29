@@ -30,6 +30,7 @@ function handleRegister(values) {
       navigate("/login");
       setLoading(false);
       console.log(response);
+      navigate("/doctors", { phone: newData.phone });
     })
     .catch((errors) => console.log(errors))
     .finally(() => {
@@ -57,7 +58,7 @@ function handleRegister(values) {
         >
         {({ errors }) => {
           return (
-            <Form>
+            <Form className="loginForm">
               <div className="input-login">
                 <label htmlFor="">Full Name</label>
                 <Field type="text" name="fullName" placeholder="Full Name" />
@@ -101,7 +102,7 @@ function handleRegister(values) {
               <div className="mb-3 ml-3">
                 already have an acount? <Link className="moveTo" to="/login">Login Now</Link>
               </div>
-              <div className="d-flex justify-end">
+              <div className="done">
                 <button type="submit">Register</button>
               </div>
             </Form>

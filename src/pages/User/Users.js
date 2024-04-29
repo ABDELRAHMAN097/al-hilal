@@ -120,7 +120,6 @@ export default function Users() {
             <th className='email'>phone</th>
             <th>Role</th>
             <th>Action</th>
-            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -132,18 +131,33 @@ export default function Users() {
               <td className='email'>{user.phone}</td>
               <td>{user.role}</td>
               
-                
-              
               <td className='m-5'>
-                {/* إضافة زر لتغيير حالة المستخدم */}
-                <button style={{ marginRight: '4px' }} onClick={() => changeUserToOwner(user._id)}>owenr</button>
-                <button style={{ marginRight: '4px' }} onClick={() => changeUserToAdmin(user._id)}>admin</button>
-                <button onClick={() => changeOwenrToUser(user._id)}>user</button>
-              </td>
-              <td>
-                {/* إضافة زر لتغيير حالة المستخدم */}
-                <button onClick={() => deleteUser(user._id)}>deleteUser</button>
-              </td>
+  {/*  إضافة قائمة منسدلة لتغيير دور المستخدم او حذفه*/}
+  <select onChange={(e) => {
+    const selectedRole = e.target.value;
+    switch(selectedRole) {
+      case 'owner':
+        changeUserToOwner(user._id);
+        break;
+      case 'admin':
+        changeUserToAdmin(user._id);
+        break;
+      case 'user':
+        changeOwenrToUser(user._id);
+        break;
+        case 'delet':
+        deleteUser(user._id);
+        break;
+      default:
+        break;
+    }
+  }}>
+    <option value="owner">Owner</option>
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+    <option value="delet">delete</option>
+  </select>
+</td>   
             </tr>
           ))}
         </tbody>
