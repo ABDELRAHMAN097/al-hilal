@@ -54,15 +54,15 @@ export default function Dashboard() {
     return (
         <div className='dash'>
              {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
-       <div className="loading-overlay">
-       <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
-     </div>
-      )}
+              <div className="loading-overlay">
+              <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+              </div>
+             )}
             {authRecoil.role === "owner"?
-           ( <Link className='btn-users' to={"/users"}> Users </Link>)
+            <Link className='btn-users' to={"/users"}> Users </Link>
             :
-            (<Link className='btn-users' to={"/"}> Home </Link>)
-        }
+            ""
+            }
             <div className='w-100'>
                 {appointments.length > 0 && (
                     <div className="table-data">

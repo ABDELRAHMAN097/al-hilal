@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.scss";
+import photo from '../../assets/img/login&register.webp'
 import Error from "../../Erorr/Error"
 import { Link } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
@@ -42,13 +43,19 @@ export default function Login() {
         });
 }
   return (
-    <div className="auth-form m-auto my-5">
+    <>
+    <div className="login-page">
        {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
        <div className="loading-overlay">
        <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
      </div>
       )}
+      <div>
+        <img src={photo} alt=""/>
+      </div>
+
       <Formik
+      className="auth-form m-auto my-5"
         initialValues={{
           email: "",
           password: "",
@@ -59,6 +66,10 @@ export default function Login() {
         {({ errors }) => {
           return (
             <Form className="loginForm">
+              <div className="text">
+                <h1>Login to Your Account</h1>
+                <p>Enter your details to continue</p>
+              </div>
               <div className="input-login">
                 <label htmlFor="">Email</label>
                 <Field type="text" name="email" placeholder="Email" />
@@ -77,12 +88,13 @@ export default function Login() {
                 don{" ُ"}t have an acount? <Link className="moveTo" to="/Register">Register Now</Link>
               </div>
               <div className="done">
-                <button type="submit">Login</button>
+                <button className="btn-log-reg" type="submit">Login</button>
               </div>
             </Form>
           );
         }}
       </Formik>
     </div>
+    </>
   );
 }
