@@ -3,7 +3,7 @@ import Emergency from "../../Components/Emergency/Emergency";
 import ph1 from '../../assets/img/slide-1.jpg'
 import ph2 from '../../assets/img/slide-2.jpg'
 import ph3 from '../../assets/img/slide-3.jpg'
-
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./index.scss";
 import 'swiper/css';
@@ -13,6 +13,12 @@ export default function HomePage() {
      
       <Swiper 
       slidesPerView={"auto"} loop
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
       >
         <SwiperSlide className="cont"> 
         
