@@ -11,7 +11,7 @@ export default function LogOut() {
             isAuth : false,
             user : null
         })
-        toast.success('loged out successfully', {autoClose:2000})
+        toast.success('تم تسجيل خروج', {autoClose:2000})
         localStorage.removeItem('loginUser')
     }
   return (

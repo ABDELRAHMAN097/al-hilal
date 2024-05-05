@@ -19,7 +19,7 @@ export default function Users() {
         console.log('User status updated successfully:', response.data);
         //  تحميل البيانات بعد تعديل لحالةالمستخدم
         getAllUsers();
-        toast.success("تم تغيير الادمن  الي مستخدم");
+        toast.success("تم تغيير المستخدم  الي الادمن");
         setLoading(false);
       })
       .catch(error => {
@@ -39,7 +39,7 @@ export default function Users() {
         console.log('User status updated successfully:', response.data);
         //  تحميل البيانات بعد تعديل لحالةالمستخدم
         getAllUsers();
-        toast.success("تم تغيير الادمن  الي مستخدم");
+        toast.success("تم تغيير اونر  الي مستخدم");
         setLoading(false);
       })
       .catch(error => {
@@ -59,7 +59,7 @@ export default function Users() {
         console.log('User status updated successfully:', response.data.phone);
         //  تحميل البيانات بعد تعديل حالةالمستخدم
         getAllUsers();
-        toast.success("تم تعيين الادمن بنجاح");
+        toast.success("تم تعيين الاونر بنجاح");
         setLoading(false);
       })
       .catch(error => {
@@ -68,8 +68,7 @@ export default function Users() {
         setLoading(false);
       });
   }
-
-  // دالة لاسترجاع بيانات المستخدمين
+  //  لاسترجاع بيانات المستخدمين
   function getAllUsers() {
     setLoading(true);
     axios.get("https://boody-magdy.vercel.app/api/users")
@@ -132,33 +131,33 @@ export default function Users() {
               <td>{user.role}</td>
               
               <td className='m-5'>
-  {/*  إضافة قائمة منسدلة لتغيير دور المستخدم او حذفه*/}
-  <select onChange={(e) => {
-    const selectedRole = e.target.value;
-    switch(selectedRole) {
-      case 'owner':
-        changeUserToOwner(user._id);
-        break;
-      case 'admin':
-        changeUserToAdmin(user._id);
-        break;
-      case 'user':
-        changeOwenrToUser(user._id);
-        break;
-        case 'delet':
-        deleteUser(user._id);
-        break;
-      default:
-        break;
-    }
-  }}>
-    <option value="select">select</option>
-    <option value="owner">Owner</option>
-    <option value="admin">Admin</option>
-    <option value="user">User</option>
-    <option value="delet">delete</option>
-  </select>
-</td>   
+                 {/*  إضافة قائمة منسدلة لتغيير دور المستخدم او حذفه*/}
+                <select onChange={(e) => {
+                  const selectedRole = e.target.value;
+                  switch(selectedRole) {
+                    case 'owner':
+                      changeUserToOwner(user._id);
+                      break;
+                    case 'admin':
+                      changeUserToAdmin(user._id);
+                      break;
+                    case 'user':
+                      changeOwenrToUser(user._id);
+                      break;
+                      case 'delet':
+                      deleteUser(user._id);
+                      break;
+                    default:
+                      break;
+                  }
+                }}>
+                  <option value="select">select</option>
+                  <option value="owner">Owner</option>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+                  <option value="delet">delete</option>
+                </select>
+              </td>   
             </tr>
           ))}
         </tbody>

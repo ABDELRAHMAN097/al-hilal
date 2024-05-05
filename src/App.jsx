@@ -19,6 +19,7 @@ import NotLoggedIn from "./Components/ProtectedRoutes/NotLoggedIn.js";
 import IsloggedIn from "./Components/ProtectedRoutes/IsloggedIn.js";
 import IsAdmin from "./Components/ProtectedRoutes/IsAdmin.js";
 import IsOwenr from "./Components/ProtectedRoutes/IsOwenr.js";
+import DrReview from "./Components/DrReview/DrReview.js";
 export default function App() {
   return (
     <div className="App">
@@ -31,6 +32,8 @@ export default function App() {
               <Route path="about" element={<About />} />
               <Route path="services" element={<Services /> } />
               <Route path="contact" element={<Contact /> } />
+              <Route path="doctors" element={<Doctors />} />
+              <Route path="DrReview" element={<DrReview />} />
               <Route path="Dashboard" element={
                 <IsloggedIn>
                   <IsAdmin>

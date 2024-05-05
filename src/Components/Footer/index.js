@@ -98,6 +98,9 @@ export default function index() {
                 <Link to="/contact">Contact</Link>
              </li>
              <li className='font-semibold md:my-0 '>
+                <Link to="/doctors">Doctors</Link>
+             </li>
+             <li className='font-semibold md:my-0 '>
                 <Link to="/register">Register</Link>
              </li>
              <li className='font-semibold md:my-0 '>

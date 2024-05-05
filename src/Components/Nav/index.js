@@ -43,11 +43,11 @@ export default function Navbar() {
           <li className="font-semibold my-7 md:my-0 md:ml-8">
             <Link to="/contact">Contact</Link>
           </li>
-          {authRecoil.isAuth && (
-            <Fragment>
-              <li className="font-semibold my-7 md:my-0 md:ml-8">
+          <li className="font-semibold my-7 md:my-0 md:ml-8">
                 <Link to="/doctors">Doctors</Link>
               </li>
+          {authRecoil.isAuth && (
+            <Fragment>
 
               <li className="font-semibold my-7 md:my-0 md:ml-8">
                 {authRecoil.role === "owner" || authRecoil.role === "admin" ? (

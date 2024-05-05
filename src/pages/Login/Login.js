@@ -51,7 +51,7 @@ export default function Login() {
      </div>
       )}
       <div>
-        <img src={photo} alt=""/>
+        <img src={photo} alt="" width={1200}/>
       </div>
 
       <Formik

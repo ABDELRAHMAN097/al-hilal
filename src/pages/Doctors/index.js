@@ -1,30 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Doctors.scss";
 import docOne from "../../assets/img/doctors-1.jpg";
-// import docTwo from '../../assets/img/doctors-2.jpg'
-// import docThree from '../../assets/img/doctors-3.jpg'
-// import docFour from '../../assets/img/doctors-4.jpg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import {faFacebook,faInstagram,faLinkedin,faTwitter,} from "@fortawesome/free-brands-svg-icons";
 import { RingLoader } from "react-spinners";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import ViewDoctor from "../../Components/ViewDoctor/ViewDoctor";
 
-export default function index() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const location = useLocation();
-  const phone = location.state?.phone;
-  
+export default function index() {  
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [loading, setLoading] = useState(false);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [users, setUsers] = useState([]);
- 
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
@@ -51,7 +38,7 @@ export default function index() {
   return (
     <>
       <div className="Services">
-        {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
+        {loading && (
           <div className="loading-overlay">
             <RingLoader
               color={"#3fbbc0"}
@@ -84,8 +71,9 @@ export default function index() {
                 <FontAwesomeIcon icon={faLinkedin} />
               </div>
               <div className="text-doc">
-                <h2>Walter White</h2>
-                <p>Chief Medical Officer</p>
+                <h2>{user.fullName}</h2>
+                <p>{user.phone}</p>
+                <ViewDoctor user={user.fullName} />
               </div>
             </div>
           ))}
@@ -94,17 +82,3 @@ export default function index() {
     </>
   );
 }
-
-<div className="doctor">
-  <img src={docOne} alt="doc-1" />
-  <div className="social-doc p-2">
-    <FontAwesomeIcon icon={faTwitter} />
-    <FontAwesomeIcon icon={faFacebook} />
-    <FontAwesomeIcon icon={faInstagram} />
-    <FontAwesomeIcon icon={faLinkedin} />
-  </div>
-  <div className="text-doc">
-    <h2>Walter White</h2>
-    <p>Chief Medical Officer</p>
-  </div>
-</div>;
