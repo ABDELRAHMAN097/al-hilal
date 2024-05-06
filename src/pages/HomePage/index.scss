@@ -37,7 +37,7 @@
   left: 50%;
   transform: translate(-50% , -50%);
   background-color: rgba(255, 255, 255, 0.637);
-  padding: 10px;
+  padding: 20px 10px;
   border-top: 2px solid var(--blueColor);
   text-align: center;
   gap: 15px;
@@ -49,8 +49,9 @@
   p{
     font-size: 14px;
     color: var(--fontColor);
+    text-align: center;
   }
-  button{
+  .button-read-moor{
     background-color: var(--blueColor);
     color: #fff;
     padding: 5px;

@@ -6,7 +6,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import emailjs from "emailjs-com";
 export default function Index() {
-
 	const form = useRef();
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -34,13 +33,22 @@ export default function Index() {
 				<h1>CONTACT</h1>
 				<span className="line"></span>
 				<p>
+					{" "}
 					Magnam dolores commodi suscipit. Necessitatibus eius
 					consequatur ex aliquid fuga eum quidem. Sit sint consectetur
 					velit. Quisquam quos quisquam cupiditate. Et nemo qui
 					impedit suscipit alias ea. Quia fugiat sit in iste officiis
-					commodi quidem hic quas.
+					commodi quidem hic quas.{" "}
 				</p>
-				
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1718.0624173338467!2d31.011354804373642!3d30.54577690191162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d65e3d189b97%3A0x874f56a556466cee!2sEgyptian%20Red%20Crescent%20Hospital!5e0!3m2!1sen!2seg!4v1711465566580!5m2!1sen!2seg"
+					width="100%"
+					height="400"
+					allowFullScreen=""
+					loading="lazy"
+					referrerPolicy="no-referrer-when-downgrade"
+					title="Embedded Content"
+				></iframe>
 			</div>
 			<div className="contactUs">
 				<div className="ourAddress">
@@ -81,7 +89,7 @@ export default function Index() {
 							<input
 								type="text"
 								id="name"
-								name="from_name"
+								name="to_name"
 								required
 								placeholder="الاسم"
 							/>
@@ -90,13 +98,22 @@ export default function Index() {
 							<input
 								type="email"
 								id="email"
-								name="to_name"
+								name="user_email"
 								required
 								placeholder="البريد الالكتروني"
 							/>
 						</div>
 					</div>
 					<div>
+						<input
+							type="text"
+							id="subject"
+							name="subject"
+							// value={formData.subject}
+							// onChange={handleChange}
+							placeholder=":الموضوع"
+							required
+						/>
 					</div>
 					<div>
 						<textarea
@@ -111,15 +128,6 @@ export default function Index() {
 					<button type="submit">إرسال</button>
 				</form>
 			</div>
-      <iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1718.0624173338467!2d31.011354804373642!3d30.54577690191162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d65e3d189b97%3A0x874f56a556466cee!2sEgyptian%20Red%20Crescent%20Hospital!5e0!3m2!1sen!2seg!4v1711465566580!5m2!1sen!2seg"
-					width="100%"
-					height="400"
-					allowFullScreen=""
-					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
-					title="Embedded Content"
-				></iframe>
 		</div>
 	);
 }

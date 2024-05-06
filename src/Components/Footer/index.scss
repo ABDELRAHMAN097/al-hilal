@@ -112,6 +112,7 @@
     flex-wrap: nowrap;
     @media screen and (max-width: 767px) {
       margin-top: 40px;
+      margin-left: 0;
     }
     a {
       color: var(--fontColor);
@@ -150,6 +151,17 @@
     margin-left: 10px;
     margin-right: 10px;
     padding: 40px 0;
+    gap: 3px;
+    @media screen and (max-width : 767px) {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+    p{
+      text-align: left;
+      @media screen and (max-width : 767px) {
+        text-align: center;
+      }
+    }
     .social {
       display: flex;
       gap: 1rem;

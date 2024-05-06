@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Doctors.scss";
-import docOne from "../../assets/img/doctors-1.jpg";
+import photo from "../../assets/img/avatar1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faFacebook,faInstagram,faLinkedin,faTwitter,} from "@fortawesome/free-brands-svg-icons";
 import { RingLoader } from "react-spinners";
@@ -53,17 +53,17 @@ export default function index() {
           <span className="line"></span>
           <p>
             Magnam dolores commodi suscipit.
-            <br /> Necessitatibus eius consequatur ex aliquid fuga eum quidem .
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem .
             Sit sint consectetur velit.
-            <br /> Quisquam quos quisquam cupiditate.
-            <br /> Et nemo qui impedit suscipit alias ea.
-            <br /> Quia fugiat sit in iste officiis commodi quidem hic quas.
+           Quisquam quos quisquam cupiditate.
+           Et nemo qui impedit suscipit alias ea.
+           Quia fugiat sit in iste officiis commodi quidem hic quas.
           </p>
         </div>
         <div className="doctors">
           {users.map((user) => (
             <div key={user._id} className="doctor">
-              <img src={docOne} alt="doc-1" />
+              <img src={photo} alt="doc-1" />
               <div className="social-doc p-2">
                 <FontAwesomeIcon icon={faTwitter} />
                 <FontAwesomeIcon icon={faFacebook} />
@@ -72,8 +72,7 @@ export default function index() {
               </div>
               <div className="text-doc">
                 <h2>{user.fullName}</h2>
-                <p>{user.phone}</p>
-                <ViewDoctor user={user.fullName} />
+                <ViewDoctor user={user} />
               </div>
             </div>
           ))}

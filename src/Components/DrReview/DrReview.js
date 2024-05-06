@@ -1,15 +1,19 @@
 import React from 'react'
 import './DrReview.scss'
-import photo from '../../assets/img/doctors-3.jpg'
+import photo from '../../assets/img/avatar1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useRecoilState } from 'recoil';
 import $doctorAtom from '../../store/doctorAtom';
+import { Navigate } from 'react-router-dom';
 
 export default function DrReview() {
 const [ doctorData ] = useRecoilState($doctorAtom);
-  
+if(doctorData == null){
+  return <Navigate to="/doctors" />
+}
+  console.log(doctorData)
   const scheduleData = [
     { day: 'Monday', workHours: '8:00 am - 3:00 pm' },
     { day: 'Tuesday', workHours: '8:00 am - 3:00 pm' },
@@ -44,13 +48,13 @@ const [ doctorData ] = useRecoilState($doctorAtom);
               <h2>Contact Info</h2>
             </div>
             <div className='info-doc'>
-              <h2> <FontAwesomeIcon icon={faPhone} className='icon'/> +1 212 425 8617</h2>
-              <h2> <FontAwesomeIcon icon={faEnvelope} className='icon'/> information@office.com</h2>
+              <h2> <FontAwesomeIcon icon={faPhone} className='icon'/>{doctorData.phone}</h2>
+              <h2> <FontAwesomeIcon icon={faEnvelope} className='icon'/>{doctorData.email}</h2>
             </div>
         </div>
         <div className='details-content'>
           <div className='item'>
-          <h2>{doctorData}</h2>
+          <h2>{doctorData.fullName}</h2>
           </div>
           <div className='p-doctor'>
             <p>Dr. Lisa Robinson is a highly skilled and compassionate obstetrician-gynecologist who is deeply committed to women's health and well-being. With a wealth of experience in the field, she has earned a reputation for her exceptional patient care and her dedication to providing comprehensive reproductive healthcare services.</p>

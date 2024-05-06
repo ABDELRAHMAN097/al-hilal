@@ -3,6 +3,6 @@ import { atom } from "recoil";
 
 const $doctorAtom = atom({
     key: 'doctorAtom',
-    default: []
+    default: null
 })
 export default $doctorAtom

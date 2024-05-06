@@ -132,7 +132,7 @@ export default function Users() {
               
               <td className='m-5'>
                  {/*  إضافة قائمة منسدلة لتغيير دور المستخدم او حذفه*/}
-                <select onChange={(e) => {
+                <select className='form-control' onChange={(e) => {
                   const selectedRole = e.target.value;
                   switch(selectedRole) {
                     case 'owner':
