@@ -87,7 +87,7 @@ export default function Dashboard() {
                                         <td>{appointment.doctor}</td>
                                         <td>
                                             {/* زر لحذف الموعد عند النقر عليه */}
-                                            <button className='btn btn-danger' onClick={() => deleteAppointment(appointment._id)}>حذف</button>
+                                            <button className='danger' onClick={() => deleteAppointment(appointment._id)}>حذف</button>
                                         </td>
                                     </tr>
                                 ))}

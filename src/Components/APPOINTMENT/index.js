@@ -233,7 +233,7 @@ export default function Index() {
                   <td>{appointment.date}</td>
                   <td>{appointment.doctor}</td>
                   <td>
-                    <button className="btn btn-danger" onClick={() => handelDelete(appointment._id)}>حذف</button>
+                  <button className="danger" onClick={() => handelDelete(appointment._id)}>حذف</button>
                   </td>
                 </tr>
               ))}

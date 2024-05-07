@@ -20,7 +20,7 @@ export default function LogOut() {
     }
   return (
     <div>
-        <button onClick={handelLogOut} className='btn btn-danger'>Log Out</button>
+        <button onClick={handelLogOut} className='danger'>Log Out</button>
     </div>
   )
 }
