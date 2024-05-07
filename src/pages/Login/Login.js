@@ -34,6 +34,7 @@ export default function Login() {
         console.log(userData.data.role)
       }else{
         toast.error("حدث خطاء")
+        setLoading(false);
       }
      })
       .catch(error => {

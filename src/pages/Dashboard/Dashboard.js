@@ -81,7 +81,7 @@ export default function Dashboard() {
                             <tbody>
                                 {appointments.map((appointment, index) => (
                                     <tr key={index}>
-                                        <td>{appointment.name}</td>
+                                        <td>{appointment.name}</td>    
                                         <td>{appointment.time}</td>
                                         <td>{appointment.date}</td>
                                         <td>{appointment.doctor}</td>

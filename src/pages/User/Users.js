@@ -7,7 +7,6 @@ export default function Users() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // const [admins, setAdmins] = useState([]);
   function changeUserToAdmin(id) {
     setLoading(true);
     // عملية تعديل الحالة
@@ -30,9 +29,8 @@ export default function Users() {
   }
   function changeOwenrToUser(id) {
     setLoading(true);
-    // عملية تعديل الحالة
     const newData = {
-      role: 'user' // تغيير قيمة الدور إلى "owner"
+      role: 'user'
     };
     axios.patch(`https://boody-magdy.vercel.app/api/users/${id}`, newData)
       .then(response => {
@@ -50,9 +48,8 @@ export default function Users() {
   }
   function changeUserToOwner(id) {
     setLoading(true);
-    // عملية تعديل الحالة
     const newData = {
-      role: 'owner' // تغيير قيمة الدور إلى "owner"
+      role: 'owner' 
     };
     axios.patch(`https://boody-magdy.vercel.app/api/users/${id}`, newData)
       .then(response => {

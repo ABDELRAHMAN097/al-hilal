@@ -121,4 +121,7 @@ form{
   margin: 5px 0;
   color: white;
   border-radius: 2px;
+  &:hover{
+    color: white !important;
+  }
 }
