@@ -50,6 +50,7 @@ if(doctorData == null){
             <div className='info-doc'>
               <h2> <FontAwesomeIcon icon={faPhone} className='icon'/>{doctorData.phone}</h2>
               <h2> <FontAwesomeIcon icon={faEnvelope} className='icon'/>{doctorData.email}</h2>
+              
             </div>
         </div>
         <div className='details-content'>

@@ -14,7 +14,7 @@ export default function Emergency() {
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
             mollit anim id est laborum.</p>
             {authRecoil.isAuth ? 
-        <Link className='btn' to="/APPOINTMENT">تحديد موعد</Link>
+        <Link className='btn' to="/APPOINTMENT">احجز موعد</Link>
             
             :(<Fragment>
                 <Link className='btn' to="/Register">go to register</Link>

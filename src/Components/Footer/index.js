@@ -6,13 +6,16 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF , faLinkedinIn , faTwitter } from "@fortawesome/free-brands-svg-icons";
-
+import { toast } from "react-toastify";
 import $AuthData from '../../store/index'
 import { useRecoilState } from "recoil";
 import LogOut from "../LogOut/LogOut";
 export default function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [authRecoil] = useRecoilState($AuthData)
+  const showToast = () => {
+    toast.success("Your form has been submitted successfully!");
+  };
   return (
     <div id="footer">
       <div className="footer-top flex items-center justify-between">
@@ -45,7 +48,7 @@ export default function index() {
               name="email"
               placeholder="Enter your email"
             />
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={showToast}>Submit</button>
           </div>
         </div>
         <div className="middleTab">
@@ -116,20 +119,18 @@ export default function index() {
         <div className="tab">
           <h2>Utility Page</h2>
           <ul>
-                <Link to="/">Style Guide</Link>         
-                <Link to="/">Protected Password</Link>  
-                <Link to="/">404 Not Found</Link>
-                <Link to="/">LicenseLicense</Link>
-                <Link to="/">Changelog</Link>
+                <Link className="toRight" to="/">Style Guide</Link>          
+                <Link className="toRight" to="/">LicenseLicense</Link>
+                <Link className="toRight" to="/">Changelog</Link>
           </ul>
           </div>
         </div>
         <div className="middleTab">
         <div className="tab">
           <h2>Contact</h2>
-          <p><span><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon></span> (603) 555-0123</p>
-          <p><span><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></span> (603) 555-0123</p>
-          <p className="time">Open 24/7 Hours</p>   
+          <p className="toRight"><span><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon></span> (603) 555-0123</p>
+          <p className="toRight"><span><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></span> (603) 555-0123</p>
+          <p className="time toRight">Open 24/7 Hours</p>   
         </div>
         </div>
       </div>

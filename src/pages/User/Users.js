@@ -108,9 +108,10 @@ export default function Users() {
        {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
        <div className="loading-overlay">
        <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
-     </div>
+       </div>
       )}
-      <h1>Users List</h1>
+      <h1>Doctors List</h1>
+      <span class="line-u"></span>
       <table className='table-data-user'>
         <thead>
           <tr>

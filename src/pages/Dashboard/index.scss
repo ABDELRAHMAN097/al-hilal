@@ -4,7 +4,17 @@
     color: white;
     border-radius: 8px;
 }
+.line{
+    position: absolute;
+    width: 46px;
+    height: 3px;
+    background-color: var(--blueColor);
+    top: 99px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .dash{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

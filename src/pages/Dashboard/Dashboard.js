@@ -63,7 +63,8 @@ export default function Dashboard() {
             :
             ""
             }
-            <div className='w-100 d-flex justify-center'style={{ fontSize: '18px' }}>مواعيد الكشف</div>
+            <div className='w-100 d-flex justify-center'style={{ fontSize: '20px' }}>مواعيد الكشف</div>
+            <span class="line"></span>
             <div className='w-100'>
                 {appointments.length > 0 && (
                     <div className="table-data">

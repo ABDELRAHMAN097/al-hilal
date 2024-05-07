@@ -52,7 +52,7 @@ export default function index() {
 <div className='taps'>
 
 <div className='tap-about'>
-<div><span> <FontAwesomeIcon icon={faUserDoctor}/> </span> <Number n={8055}/></div>
+<div className='num'><span> <FontAwesomeIcon icon={faUserDoctor}/> </span> <Number n={8055}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
@@ -60,21 +60,21 @@ export default function index() {
 
 <div className='tap-about'>
   
-  <div><span><FontAwesomeIcon icon={faHospitalAlt} /></span> <Number n={2600}/> </div>
+  <div className='num'><span><FontAwesomeIcon icon={faHospitalAlt} /></span> <Number  n={2600}/> </div>
   <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
 <div className='tap-about'>
-<div><span> <FontAwesomeIcon icon={faFlask}/> </span> <Number n={1504}/></div>
+<div className='num'><span> <FontAwesomeIcon icon={faFlask}/> </span> <Number  n={1504}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
 <div className='tap-about'>
-<div><span> <FontAwesomeIcon icon={faAward}/> </span> <Number n={1150}/></div>
+<div className='num'><span> <FontAwesomeIcon icon={faAward}/> </span> <Number n={1150}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 </div>
