@@ -64,28 +64,28 @@ export default function Register() {
                   <p>Start your journey here</p>
                 </div>
                 <div className="input-login">
-                  <label htmlFor="">Full Name</label>
+                  
                   <Field type="text" name="fullName" placeholder="Full Name" />
                   <Error>
-                    <ErrorMessage name="name" />
+                    <ErrorMessage name="fullName" />
                   </Error>
                 </div>
                 <div className="input-login">
-                  <label htmlFor="">Phone numper</label>
+                 
                   <Field type="text" name="phone" placeholder="Phone-numper" />
                   <Error>
                     <ErrorMessage name="phone" />
                   </Error>
                 </div>
                 <div className="input-login">
-                  <label htmlFor="">Email</label>
+                 
                   <Field type="text" name="email" placeholder="Email" />
                   <Error>
                     <ErrorMessage name="email" />
                   </Error>
                 </div>
                 <div className="input-login">
-                  <label htmlFor="">Password</label>
+                  
                   <Field type="password" name="password" placeholder="Password" />
 
                   <Error>
@@ -93,7 +93,7 @@ export default function Register() {
                   </Error>
                 </div>
                 <div className="input-login">
-                  <label htmlFor="">Confirm Password</label>
+                  
                   <Field
                     type="password"
                     name="confirm_password"

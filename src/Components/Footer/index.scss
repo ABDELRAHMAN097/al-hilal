@@ -171,6 +171,7 @@
 }
 .toRight{
   font-weight: 500;
+  transition: padding-left 0.5s;
   &:hover{
     padding-left: 10px;
   }

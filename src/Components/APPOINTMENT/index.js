@@ -83,9 +83,13 @@ export default function Index() {
   }, []);
 
   function getAllAdmins() {
+    setLoading(true);
+
     axios
       .get("https://boody-magdy.vercel.app/api/users")
       .then((response) => {
+      setLoading(false);
+
         const adminUsers = response.data.filter(
           (user) => user.role === "admin"
         );
@@ -93,6 +97,8 @@ export default function Index() {
       })
       .catch((error) => {
         console.error("Error fetching admin users:", error);
+        setLoading(true);
+
       });
   }
 

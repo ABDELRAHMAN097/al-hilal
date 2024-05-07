@@ -71,14 +71,14 @@ export default function Login() {
                 <p>Enter your details to continue</p>
               </div>
               <div className="input-login">
-                <label htmlFor="">Email</label>
+                
                 <Field type="text" name="email" placeholder="Email" />
                 <Error>
                   <ErrorMessage name="email" />
                 </Error>
               </div>
               <div className="input-login">
-                <label htmlFor="">Passwoed</label>
+               
                 <Field type="password" name="password" placeholder="Passwoed" />
                 <Error>
                   <ErrorMessage name="password" />
