@@ -2,13 +2,14 @@ import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faDna,
+  faBone,
+  faBrain,
   faHeartbeat,
   faHospitalUser,
-  faKitMedical,
-  faPills,
-  faWheelchair,
+  faPersonBreastfeeding,
 } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 export default function index() {
   return (
     <div className="Services">
@@ -28,83 +29,79 @@ export default function index() {
             <FontAwesomeIcon icon={faHeartbeat} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Cardiology</h3>
           <span className="line-tap"></span>
 
           <p>
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
+          Our board-certified cardiologists treat and prevent cardiovascular problems with a focus on heart health.
           </p>
+          <Link className='appint more' to= "/Heart">Learn More ...</Link>
         </div>
-
         <div className="tap">
           <div className="icon">
-            <FontAwesomeIcon icon={faPills} />
+          <FontAwesomeIcon icon={faEye} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Ophthalmology</h3>
           <span className="line-tap"></span>
 
           <p>
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
+          In order to keep your vision healthy, our ophthalmologists provide eye exams and surgeries.
           </p>
+          <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-
         <div className="tap">
           <div className="icon">
             <FontAwesomeIcon icon={faHospitalUser} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Health Care</h3>
           <span className="line-tap"></span>
 
           <p>
             Voluptatum deleniti atque corrupti quos dolores et quas molestias
             excepturi sint occaecati cupiditate non provident
           </p>
+          <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-
         <div className="tap">
           <div className="icon">
-            <FontAwesomeIcon icon={faDna} />
+            <FontAwesomeIcon icon={faBone} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Orthopedic Surgery</h3>
           <span className="line-tap"></span>
 
           <p>
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
+          Discover renewed hope through our advanced bone marrow transplant procedures.
           </p>
+          <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-
         <div className="tap">
           <div className="icon">
-            <FontAwesomeIcon icon={faWheelchair} />
+            <FontAwesomeIcon icon={faBrain} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Neurology</h3>
           <span className="line-tap"></span>
 
           <p>
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
+          Specialized care for brain and nerve disorders, ensuring expert diagnosis and compassionate treatment.
           </p>
+          <Link className='appint more' to= "/neurology">Learn More ...</Link>
         </div>
-
         <div className="tap">
           <div className="icon">
-            <FontAwesomeIcon icon={faKitMedical} />
+            <FontAwesomeIcon icon={faPersonBreastfeeding} />
           </div>
 
-          <h3>cum quia delectus</h3>
+          <h3>Maternity Care</h3>
           <span className="line-tap"></span>
 
           <p>
-            Voluptatum deleniti atque corrupti quos dolores et quas molestias
-            excepturi sint occaecati cupiditate non provident
+          Experience comprehensive maternity care that prioritizes the health and well-being of expectant mothers and their newborns.
           </p>
+          <Link className='appint more' to= "/Mother">Learn More ...</Link>
         </div>
       </div>
     </div>

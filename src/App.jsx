@@ -20,6 +20,10 @@ import IsloggedIn from "./Components/ProtectedRoutes/IsloggedIn.js";
 import IsAdmin from "./Components/ProtectedRoutes/IsAdmin.js";
 import IsOwenr from "./Components/ProtectedRoutes/IsOwenr.js";
 import DrReview from "./Components/DrReview/DrReview.js";
+import Orthopedic from './pages/Services/Orthopedic.js'
+import Mother from "./pages/Services/Mother.js";
+import Heart from "./pages/Services/Heart.js";
+import Neurology from "./pages/Services/Neurology.js";
 export default function App() {
   return (
     <div className="App">
@@ -34,6 +38,10 @@ export default function App() {
               <Route path="contact" element={<Contact /> } />
               <Route path="doctors" element={<Doctors />} />
               <Route path="DrReview" element={<DrReview />} />
+              <Route path="Heart" element={<Heart />} />
+              <Route path="neurology" element={<Neurology />} />
+              <Route path="Orthopedic" element={<Orthopedic />} />
+              <Route path="Mother" element={<Mother />} />
               <Route path="Dashboard" element={
                 <IsloggedIn>
                   <IsAdmin>
