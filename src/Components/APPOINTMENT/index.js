@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Appointment.scss";
-import appointPhoto from '../../assets/img/appointment.jpg'
+import appointPhoto from '../../assets/img/appointment.jpg';
 import axios from "axios";
 import { toast } from "react-toastify";
 import { RingLoader } from "react-spinners";
@@ -39,7 +39,13 @@ export default function Index() {
       setDateError("الرجاء إدخال التاريخ");
       isValid = false;
     } else {
-      setDateError("");
+      const today = new Date().toISOString().split("T")[0];
+      if (date < today) {
+        setDateError("لا يمكن اختيار تاريخ سابق");
+        isValid = false;
+      } else {
+        setDateError("");
+      }
     }
 
     if (!doctor) {
@@ -71,12 +77,11 @@ export default function Index() {
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
       })
       .catch((error) => {
-        toast.error("حدث خطاء لم يتم الحجز");
-        console.error("خطأ اثناء الاتصال بالخادم:", error);
+        toast.error("حدث خطأ، لم يتم الحجز");
+        console.error("خطأ أثناء الاتصال بالخادم:", error);
         setLoading(false);
       });
   }
-  
 
   useEffect(() => {
     getAllAdmins();
@@ -88,7 +93,7 @@ export default function Index() {
     axios
       .get("https://boody-magdy.vercel.app/api/users")
       .then((response) => {
-      setLoading(false);
+        setLoading(false);
 
         const adminUsers = response.data.filter(
           (user) => user.role === "admin"
@@ -96,9 +101,8 @@ export default function Index() {
         setUsers(adminUsers);
       })
       .catch((error) => {
-        console.error("Error fetching admin users:", error);
+        console.error("خطأ في جلب مستخدمي الأدمن:", error);
         setLoading(true);
-
       });
   }
 
@@ -107,7 +111,7 @@ export default function Index() {
     axios
       .delete(`https://boody-magdy.vercel.app/api/appointments/${id}`)
       .then((response) => {
-        console.log('deleted appointment', response.data);
+        console.log('تم حذف الموعد', response.data);
         toast.success('تم حذف الحجز');
         setLoading(false);
         const updatedAppointments = appointments.filter(appointment => appointment._id !== id);
@@ -115,8 +119,8 @@ export default function Index() {
         localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
       })
       .catch((error) => {
-        toast.error('حدث خطاء أثناء حذف الحجز');
-        console.error('Error deleting appointment:', error);
+        toast.error('حدث خطأ أثناء حذف الحجز');
+        console.error('خطأ في حذف الموعد:', error);
         setLoading(false);
       });
   }
@@ -128,28 +132,28 @@ export default function Index() {
 
   return (
     <div className="Appoint">
-      {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
-              <div className="loading-overlay">
-              <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
-              </div>
-             )}
+      {loading && ( // عرض شاشة الانتظار إذا كانت الحالة true
+        <div className="loading-overlay">
+          <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
+        </div>
+      )}
       <div className="APPOINTMENT">
         <h1>إحجز موعد</h1>
         <span className="line"></span>
         <p>
-          يرجى اختيار الطبيب المفضل لديك من القائمة المتاحة يرجى تحديد التاريخ
-          والوقت المناسبين لك حسب التخصص للموعد الطبي بعد تحديد الموعد، يُطلب
-          منك تأكيد الحجز لإتمام العملية شكرًا لاستخدامك نظام حجز المستشفى
-          الإلكتروني. نتطلع لخدمتك وتقديم الرعاية الصحية المناسبة لك
+          يرجى اختيار الطبيب المفضل لديك من القائمة المتاحة. يرجى تحديد التاريخ
+          والوقت المناسبين لك حسب التخصص للموعد الطبي. بعد تحديد الموعد، يُطلب
+          منك تأكيد الحجز لإتمام العملية. شكرًا لاستخدامك نظام حجز المستشفى
+          الإلكتروني. نتطلع لخدمتك وتقديم الرعاية الصحية المناسبة لك.
         </p>
 
         <form onSubmit={handelAppointment}>
-        <div className="appoint-photo">
-                <img src={appointPhoto} alt="appointPhoto"/>
-              </div>
+          <div className="appoint-photo">
+            <img src={appointPhoto} alt="appointPhoto" />
+          </div>
           <div className="inputs">
             <div className="input-group">
-              <label htmlFor="">Name</label>
+              <label htmlFor="">الاسم</label>
               <input
                 className="input-Appoint"
                 type="text"
@@ -162,7 +166,7 @@ export default function Index() {
             </div>
 
             <div className="input-group">
-              <label htmlFor="">Time</label>
+              <label htmlFor="">الوقت</label>
               <input
                 className="input-Appoint"
                 type="time"
@@ -175,7 +179,7 @@ export default function Index() {
             </div>
 
             <div className="input-group">
-              <label htmlFor="">date</label>
+              <label htmlFor="">التاريخ</label>
               <input
                 className="input-Appoint"
                 type="date"
@@ -188,7 +192,7 @@ export default function Index() {
             </div>
 
             <div className="input-group">
-              <label htmlFor="">الاطباء</label>
+              <label htmlFor="">الأطباء</label>
               <select
                 className="input-Appoint specialty form-control w-100"
                 name="doctor"
@@ -212,7 +216,7 @@ export default function Index() {
         </form>
       </div>
 
-      {appointments.length > 0 && (
+      {appointments.length > 0 ? (
         <div className="Appoint-data">
           <table className="table-data-user">
             <thead>
@@ -221,8 +225,7 @@ export default function Index() {
                 <th>الوقت</th>
                 <th>التاريخ</th>
                 <th>اسم الدكتور</th>
-                <th>Action</th>
-
+                <th>الإجراء</th>
               </tr>
             </thead>
             <tbody>
@@ -233,13 +236,15 @@ export default function Index() {
                   <td>{appointment.date}</td>
                   <td>{appointment.doctor}</td>
                   <td>
-                  <button className="danger" onClick={() => handelDelete(appointment._id)}>حذف</button>
+                    <button className="danger" onClick={() => handelDelete(appointment._id)}>حذف</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      ) : (
+        <h3 className="d-flex justify-content-center">لم يتم الحجز بعد</h3>
       )}
     </div>
   );

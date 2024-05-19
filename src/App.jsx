@@ -24,13 +24,16 @@ import Orthopedic from './pages/Services/Orthopedic.js'
 import Mother from "./pages/Services/Mother.js";
 import Heart from "./pages/Services/Heart.js";
 import Neurology from "./pages/Services/Neurology.js";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop.js"
 export default function App() {
   return (
     <div className="App">
       <RecoilRoot>
         <BrowserRouter>
           <Nav />
+          <ScrollToTop />
           <Routes>
+         
             <Route path="/">
               <Route index element={<HomePage />} />
               <Route path="about" element={<About />} />
