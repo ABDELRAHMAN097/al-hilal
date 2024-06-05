@@ -115,7 +115,7 @@ export default function Index() {
 							placeholder="الرسالة:"
 						/>
 					</div>
-					<button type="submit">إرسال</button>
+					<button className="btn" type="submit">إرسال</button>
 				</form>
 			</div>
       			<iframe className="wow animate__animated animate__fadeInDownBig animate__slow 2s"

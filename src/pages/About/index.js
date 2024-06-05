@@ -30,9 +30,9 @@ export default function index() {
   return (
     <div className='apout'>
     <div className='intro-about'>
-      <h1 className='wow animate__animated animate__fadeInUpBig animate__slow	1s'>عن مستشفي الهلال</h1>
+      <h1 className='wow animate__animated animate__fadeInUpBig animate__slow	1s'>About Al Hilal Hospital</h1>
       <span className='line'></span>
-      <p className='wow animate__animated animate__fadeInDownBig animate__slow	1s'> مستشفي الهلال تساعدك للوصول سريعا للعلاج الصحيح و الدكتور المناسب او اي تخصص طبي  تحتاجه بالإضافة لتخصص الحضانات
+      <p className='wow animate__animated animate__fadeInDownBig animate__slow	1s'> Al Hilal Hospital helps you quickly reach the right treatment, the right doctor, or any medical specialty you need, in addition to nursery specialization
 </p>
     </div>
     <div className='info-about'>
@@ -40,13 +40,13 @@ export default function index() {
       <img src={sign} alt='alhilal sign'/>
     </div>
     <div className='text-about wow animate__animated animate__backInRight'>
-    <h1>ما تقدمه مستشفي الهلال</h1>
+    <h1>What Al Hilal Hospital offers</h1>
     
-    <p>مبادرات المشاركة المجتمعية والعافية: يتفاعل مستشفى الهلال بشكل فعال مع المجتمع من خلال برامج التثقيف الصحي المختلفة، وحملات التوعية، ومبادرات العافية، بهدف تعزيز ممارسات الرعاية الصحية الوقائية وتمكين الأفراد من عيش حياة أكثر صحة</p>
-    <p> خدمات الرعاية الصحية الشاملة<span><FontAwesomeIcon icon={faCheck} /></span></p>
-    <p> افضل طاقم طبي في الشرق الاوسط<span><FontAwesomeIcon icon={faCheck} /></span></p>
-    <p> احدث الاجهزه الطبيه<span><FontAwesomeIcon icon={faCheck} /></span> </p>
-    <p>تجهيزات علي اعلي مستوي من الكفائه<span><FontAwesomeIcon icon={faCheck} /></span> </p>
+    <p>Community Engagement and Wellness Initiatives: Al Hilal Hospital actively engages with the community through various health education programs, awareness campaigns, and wellness initiatives, with the aim of promoting preventive healthcare practices and empowering individuals to live healthier lives.</p>
+    <p>Comprehensive health care services<span><FontAwesomeIcon icon={faCheck} /></span></p>
+    <p>The best medical staff in the Middle East<span><FontAwesomeIcon icon={faCheck} /></span></p>
+    <p>The latest medical devices<span><FontAwesomeIcon icon={faCheck} /></span> </p>
+    <p>Equipment at the highest level of efficiency<span><FontAwesomeIcon icon={faCheck} /></span> </p>
     </div>
     </div>
 <div className='taps'>

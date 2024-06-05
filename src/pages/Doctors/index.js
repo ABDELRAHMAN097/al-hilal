@@ -6,6 +6,7 @@ import {faFacebook,faInstagram,faLinkedin,faTwitter,} from "@fortawesome/free-br
 import { RingLoader } from "react-spinners";
 import axios from "axios";
 import ViewDoctor from "../../Components/ViewDoctor/ViewDoctor";
+import { WOW } from "wowjs";
 
 export default function index() {  
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -13,6 +14,11 @@ export default function index() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [users, setUsers] = useState([]);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+		const wow = new WOW({live: false });
+		wow.init();
+	  },[])
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     getAllAdmins();
@@ -49,9 +55,9 @@ export default function index() {
           </div>
         )}
         <div className="intro-services">
-          <h1>DOCTORS</h1>
+          <h1 className="wow animate__animated animate__fadeInUpBig animate__slow	1s">DOCTORS</h1>
           <span className="line"></span>
-          <p>
+          <p className='wow animate__animated animate__fadeInDownBig animate__slow 1s'>
             Magnam dolores commodi suscipit.
             Necessitatibus eius consequatur ex aliquid fuga eum quidem .
             Sit sint consectetur velit.
@@ -60,7 +66,7 @@ export default function index() {
            Quia fugiat sit in iste officiis commodi quidem hic quas.
           </p>
         </div>
-        <div className="doctors">
+        <div className="doctors className='wow animate__animated animate__fadeInDownBig animate__slow 1s'">
           {users.map((user) => (
             <div key={user._id} className="doctor">
               <img src={photo} alt="doc-1" />

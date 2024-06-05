@@ -53,7 +53,7 @@ export default function Footer() {
                 name="email"
                 placeholder="Enter your email"
               />
-              <button type="submit" onClick={showToast}>Submit</button>
+              <button className="btn" type="submit" onClick={showToast}>Submit</button>
             </div>
           </div>
           <div className="middleTab">
