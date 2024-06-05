@@ -30,9 +30,9 @@ export default function index() {
   return (
     <div className='apout'>
     <div className='intro-about'>
-      <h1>عن مستشفي الهلال</h1>
+      <h1 className='wow animate__animated animate__fadeInUpBig animate__slow	1s'>عن مستشفي الهلال</h1>
       <span className='line'></span>
-      <p> مستشفي الهلال تساعدك للوصول سريعا للعلاج الصحيح و الدكتور المناسب او اي تخصص طبي  تحتاجه بالإضافة لتخصص الحضانات
+      <p className='wow animate__animated animate__fadeInDownBig animate__slow	1s'> مستشفي الهلال تساعدك للوصول سريعا للعلاج الصحيح و الدكتور المناسب او اي تخصص طبي  تحتاجه بالإضافة لتخصص الحضانات
 </p>
     </div>
     <div className='info-about'>
@@ -51,14 +51,14 @@ export default function index() {
     </div>
 <div className='taps'>
 
-<div className='tap-about'>
+<div className='tap-about wow animate__animated animate__fadeInLeft'>
 <div className='num'><span> <FontAwesomeIcon icon={faUserDoctor}/> </span> <Number n={8055}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
-<div className='tap-about'>
+<div className='tap-about  wow animate__animated animate__fadeInDownBig'>
   
   <div className='num'><span><FontAwesomeIcon icon={faHospitalAlt} /></span> <Number  n={2600}/> </div>
   <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
@@ -66,14 +66,14 @@ export default function index() {
 
 </div>
 
-<div className='tap-about'>
+<div className='tap-about  wow animate__animated animate__fadeInTopRight'>
 <div className='num'><span> <FontAwesomeIcon icon={faFlask}/> </span> <Number  n={1504}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
 
 </div>
 
-<div className='tap-about'>
+<div className='tap-about  wow animate__animated animate__fadeInDown animate__delay-1s'>
 <div className='num'><span> <FontAwesomeIcon icon={faAward}/> </span> <Number n={1150}/></div>
 <h3><span className='dd'>Departments</span>adipisci atque cum quia aut numquam delectus</h3>
   <p className='small' >Find out more »</p>
@@ -82,7 +82,7 @@ export default function index() {
 </div>
     <div className='info-about'>
    
-    <div className='text-about wow animate__animated animate__backInRight'>
+    <div className='text-about wow animate__animated animate__backInRight  animate__delay-1s'>
     <h1>  رؤيتنا</h1>
     <p>الحفاظ على أعلى المعايير الدولية للخدمات المعملية والتوعية الصحية لتقديم خدمة أفضل للمرض والعملاء والصناعة ككل</p>
     <p>  الرعاية الصحية الشاملة<span><FontAwesomeIcon icon={faFile} /></span></p>
@@ -90,7 +90,7 @@ export default function index() {
     <p> احدث الاجهزه الطبيه<span><FontAwesomeIcon icon={faImage} /></span> </p>
     <p>تجهيزات علي اعلي مستوي من الكفائه<span><FontAwesomeIcon icon={faShield} /></span> </p>
     </div>
-    <div className='img-about wow animate__animated animate__backInLeft'>
+    <div className='img-about wow animate__animated animate__backInLeft  animate__delay-1s'>
       <img src={features} alt='alhilal features'/>
     </div>
 

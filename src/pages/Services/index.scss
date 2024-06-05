@@ -49,6 +49,8 @@
   position: absolute;
   left: 50%;
   bottom: 8px;
+  color: var(--blueColor) !important;
+  font-weight: 500 !important;
   transform: translateX(-50%);
 }
 .tap {
@@ -62,6 +64,8 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1.5rem;
+  background-color: rgb(241, 241, 241);
+
   &:hover {
     .icon {
       box-shadow: 1px 1px 10px var(--blueColor);

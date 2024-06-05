@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <div className="home">
-     
       <Swiper 
       slidesPerView={"auto"} loop
       autoplay={{
@@ -26,7 +25,7 @@ export default function HomePage() {
           <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
               <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
-              <Link className="button-read-moor" to={"/about"}>READ MORE</Link>
+              <Link className="btn button-read-moor" to={"/about"}>READ MORE</Link>
           </div>
 
          <img className="w-100" src={ph1} alt=""/> 
@@ -36,7 +35,7 @@ export default function HomePage() {
         <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
               <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
-              <Link className="button-read-moor" to={"/about"}>READ MORE</Link>
+              <Link className="btn button-read-moor" to={"/about"}>READ MORE</Link>
           </div>
 
         <img className="w-100" src={ph2} alt=""/> 
@@ -46,20 +45,17 @@ export default function HomePage() {
         <div className="text-box">
               <h1>Welcome to Al Hilal Hospital</h1>
               <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat. Similique ea volup.</p>
-              <Link className="button-read-moor" to={"/about"}>READ MORE</Link>
+              <Link className="btn button-read-moor" to={"/about"}>READ MORE</Link>
           </div>
 
            <img className="w-100" src={ph3} alt=""/> 
             </SwiperSlide>
 
       </Swiper>
-
        <div>
         <img src='../../assets/img/slide-3.jpg' alt=""/>
       </div> 
-
       <Emergency />
-  
     </div>
   );
 }

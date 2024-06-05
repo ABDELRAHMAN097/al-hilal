@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import { useRecoilState } from "recoil";
 import $AuthData from "../../store/index";
+import LogOut from "../LogOut/LogOut";
 
 export default function Navbar() {
   const [authRecoil] = useRecoilState($AuthData);
@@ -48,21 +49,23 @@ export default function Navbar() {
               </li>
           {authRecoil.isAuth && (
             <Fragment>
-
+               <li className="font-semibold my-7 md:my-0 md:ml-8">
+               <LogOut/>
+              </li>
               <li className="font-semibold my-7 md:my-0 md:ml-8">
                 {authRecoil.role === "owner" || authRecoil.role === "admin" ? (
                   <Link
-                    className="btn bg-blue-300 py-1 px-3 md:ml-3 rounded md:static text-black"
+                    className="btn bg-blue-300 py-1 px-3 md:ml-3 rounded md:static text-white"
                     to="/Dashboard"
                   >
                     لوحة التحكم
                   </Link>
                 ) : (
                   <Link
-                    className="btn bg-blue-300 py-1 px-3 md:ml-3 rounded md:static text-black"
+                    className="btn py-1 px-3 md:ml-3 rounded md:static text-white"
                     to="/APPOINTMENT"
                   >
-                    إحجز موعد
+                  Appointment
                   </Link>
                 )}
               </li>
@@ -70,10 +73,10 @@ export default function Navbar() {
           )}
           {!authRecoil.isAuth && (
             <Fragment>
-              <li className="font-semibold my-7 md:my-0 md:ml-8">
+              <li className="btn font-semibold my-7 md:my-0 md:ml-8  text-white">
                 <Link to="/register">Register</Link>
               </li>
-              <li className="font-semibold my-7 md:my-0 md:ml-8">
+              <li className="btn font-semibold my-7 md:my-0 md:ml-8  text-white">
                 <Link to="/login">Login</Link>
               </li>
             </Fragment>

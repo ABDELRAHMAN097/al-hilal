@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index';
-
+import './LogOut.scss'
 
 export default function LogOut() {
   const [appointments, setAppointments] = useState([]);
-
+    console.log(appointments)
     const [authRecoil , setauthRecoil] = useRecoilState($AuthData)
+    console.log(authRecoil)
     function handelLogOut(){
       localStorage.removeItem("appointments");
       setAppointments([]);
@@ -20,7 +21,7 @@ export default function LogOut() {
     }
   return (
     <div>
-        <button onClick={handelLogOut} className='danger'>Log Out</button>
+        <button onClick={handelLogOut} className='logout-button btn'>Log Out</button>
     </div>
   )
 }

@@ -55,7 +55,7 @@ body {
 }
 
 :root{
-  --bgFooter: #f6f6f6;
+  --bgFooter: #e9e9e9;
   --fontColor: #555;
   --gradient-color1: #f4e8c5; 
   --gradient-color2: #fbf2ee; 
@@ -64,36 +64,22 @@ body {
   --bgIcon: #393b42;
   --second-color: hsla(0, 0%, 100%, 0.7);
   --blueColor: #358ecc;
+  
+  ;
 }
 
-// @media screen and (min-width: 100px) {
-//   /* font at xs */
-//   html {
-//     font-size: 10px !important;
-//   }
-// }
+.btn {
+  background-color: var(--blueColor); 
+  color: #fff !important; 
+  padding: 8px 16px; 
+  border-radius: 4px; 
+  transition: background-color 0.3s; 
+}
 
-// @media screen and (min-width: 768px) {
-//   /* font at sm */
-//   html {
-//     font-size: 12px !important;
-//   }
-// }
+.btn:hover {
+  background-color: #afd6f1; 
+}
 
-// @media screen and (min-width: 991px) {
-//   /* font at md */
-//   html {
-//     font-size: 14px !important;
-//   }
-// }
-
-// @media screen and (min-width: 1200px) {
-//   /* font at lg */
-//   html {
-//     font-size: 16px !important;
-//   }
-// }
-// loading-screen
 .loading-overlay {
   position: fixed;
   top: 0;

@@ -9,12 +9,7 @@
     margin-top: 20px;
    }
 }
-ul{
-    // @media screen and (max-width:767px){
-    //     background-color: transparent;
-    //     color: white;
-    // }
-}
+
 .z-ind{
     position: absolute;
     z-index: 4;
@@ -23,7 +18,7 @@ ul{
     border-radius: 4px;
 }
 button{
-    &:hover{
+    :hover{
         color: black;
     }
 }

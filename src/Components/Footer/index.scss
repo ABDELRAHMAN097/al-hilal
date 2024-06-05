@@ -1,8 +1,16 @@
 #footer {
-  background-color: var(--bgFooter);
   width: 100%;
-  color: var(--fontColor);
-  //footer Top
+  color: white;
+  position: relative;
+  background-image: url('../../assets/img/foooootr.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+.filter{
+  background-color: #4444448f;
+  width: 100%;
+  height: 100%;
+}
   .footer-top {
     padding: 70px 10px 70px 10px;
     margin-left: 10px;
@@ -24,7 +32,7 @@
       }
     }
   }
-  //footer middel
+  //footer middle
   .middle {
     display: flex;
     flex-direction: row;
@@ -36,14 +44,12 @@
     justify-content: center;
     @media screen and (max-width: 767px) {
       display: flex;
-     
     }
   }
   .middleTab {
     width: calc((100% - 2rem) / 4);
     @media screen and (max-width: 570px) {
       width: 100%;
-     
     }
     display: flex;
     flex-direction: column;
@@ -69,7 +75,7 @@
         font-weight: 700;
       }
       p {
-        color: var(--fontColor);
+        color: white;
       }
     }
     .input-supmit {
@@ -86,9 +92,7 @@
         @media screen and (max-width: 570px) {
           width: 100px;
           font-size: 13px;
-
-           
-          }
+        }
       }
       button {
         height: 41px;
@@ -115,7 +119,7 @@
       margin-left: 0;
     }
     a {
-      color: var(--fontColor);
+      color: white;
     }
     h2 {
       font-size: 20px;
@@ -125,7 +129,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      color: var(--second-color);
+      color: white;
       width: 100%;
     }
     span {
@@ -137,12 +141,11 @@
       font-weight: 700;
     }
   }
-  .btn-Appoint{
+  .btn-Appoint {
     background-color: var(--blueColor);
     padding: 10px;
     border-radius: 5px;
     color: white !important;
-   
   }
   .Copyright {
     display: flex;
@@ -152,13 +155,13 @@
     margin-right: 10px;
     padding: 40px 0;
     gap: 3px;
-    @media screen and (max-width : 767px) {
+    @media screen and (max-width: 767px) {
       flex-direction: column-reverse;
       gap: 1rem;
     }
-    p{
+    p {
       text-align: left;
-      @media screen and (max-width : 767px) {
+      @media screen and (max-width: 767px) {
         text-align: center;
       }
     }
@@ -169,17 +172,21 @@
     }
   }
 }
-.toRight{
+
+.toRight {
   font-weight: 500;
   transition: padding-left 0.5s;
-  &:hover{
+  &:hover {
     padding-left: 10px;
   }
 }
-.appint{
-  background-color: var(--blueColor);
-  padding: 5px 14px;
-  margin: 5px 0;
-  color: white !important;
-  border-radius: 2px;
+
+.appint {
+  padding: 7px 10px;
+  color: white;
+}
+
+.top-content {
+  position: relative;
+  z-index: 2; /* طبقة أعلى */
 }

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { WOW } from "wowjs";
 import {
   faBone,
   faBrain,
@@ -11,20 +12,23 @@ import {
 import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 export default function index() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    const wow = new WOW({live: false });
+    wow.init();
+  },[])
   return (
     <div className="Services">
       <div className="intro-services">
-        <h1>خدماتنا</h1>
+        <h1 className="wow animate__animated animate__fadeInUpBig animate__slow	1s">Our Services</h1>
         <span className="line"></span>
-        <p>
-          {" "}
-          مستشفي الهلال تساعدك للوصول سريعا للعلاج الصحيح و الدكتور المناسب او
-          اي تخصص طبي تحتاجه بالإضافة لتخصص الحضانات
+        <p className="wow animate__animated animate__fadeInDownBig animate__slow	1s">
+        Al Hilal Hospital helps you quickly reach the right treatment, the right doctor, or any medical specialty you need, in addition to nursery specialization
         </p>
       </div>
 
       <div className="taps">
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInDownBig">
           <div className="icon">
             <FontAwesomeIcon icon={faHeartbeat} />
           </div>
@@ -37,7 +41,7 @@ export default function index() {
           </p>
           <Link className='appint more' to= "/Heart">Learn More ...</Link>
         </div>
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInTopRight">
           <div className="icon">
           <FontAwesomeIcon icon={faEye} />
           </div>
@@ -50,7 +54,7 @@ export default function index() {
           </p>
           <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInLeft">
           <div className="icon">
             <FontAwesomeIcon icon={faHospitalUser} />
           </div>
@@ -64,7 +68,7 @@ export default function index() {
           </p>
           <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInDown">
           <div className="icon">
             <FontAwesomeIcon icon={faBone} />
           </div>
@@ -77,7 +81,7 @@ export default function index() {
           </p>
           <Link className='appint more' to= "/Orthopedic">Learn More ...</Link>
         </div>
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInLeft animate__delay-1s">
           <div className="icon">
             <FontAwesomeIcon icon={faBrain} />
           </div>
@@ -90,7 +94,7 @@ export default function index() {
           </p>
           <Link className='appint more' to= "/neurology">Learn More ...</Link>
         </div>
-        <div className="tap">
+        <div className="tap wow animate__animated animate__fadeInRight animate__delay-1s">
           <div className="icon">
             <FontAwesomeIcon icon={faPersonBreastfeeding} />
           </div>
