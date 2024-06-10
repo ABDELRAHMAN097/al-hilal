@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.scss";
 import photo from '../../assets/img/login&register.webp'
 import Error from "../../Erorr/Error"
@@ -9,6 +9,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { RingLoader } from "react-spinners";
+import { WOW } from "wowjs";
 
 export default function Register() {
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,10 @@ export default function Register() {
         setLoading(false);
       });
   }
+  useEffect(() => {
+		const wow = new WOW({live: false });
+		wow.init();
+	  },[])
 
   return (
     <>
@@ -41,8 +46,8 @@ export default function Register() {
           </div>
         )}
 
-        <div>
-          <img src={photo} alt="" width={1200} />
+        <div className="wow animate__animated animate__fadeInDownBig animate__slow 1s">
+          <img src={photo} alt="" width={1000} />
         </div>
 
         <Formik
@@ -58,7 +63,7 @@ export default function Register() {
         >
           {({ errors }) => {
             return (
-              <Form className="loginForm">
+              <Form className="loginForm wow animate__animated animate__fadeInUpBig animate__slow	1s">
                 <div className="text">
                   <h1>Create New Account</h1>
                   <p>Start your journey here</p>

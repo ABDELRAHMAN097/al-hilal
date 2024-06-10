@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.scss";
 import photo from '../../assets/img/login&register.webp'
 import Error from "../../Erorr/Error"
@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
 import $AuthData from '../../store/index'
 import { RingLoader } from "react-spinners";
+import { WOW } from "wowjs";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -43,16 +44,20 @@ export default function Login() {
             setLoading(false);
         });
 }
+useEffect(() => {
+  const wow = new WOW({live: false });
+  wow.init();
+  },[])
   return (
     <>
-    <div className="login-page">
+    <div className="login-page ">
        {loading && ( // عرض شاشة الانتظار اذا كانت الحاله true
        <div className="loading-overlay">
        <RingLoader color={"#3fbbc0"} loading={loading} size={150} className="loading-spinner" />
      </div>
       )}
-      <div>
-        <img src={photo} alt="" width={1200}/>
+      <div className="wow animate__animated animate__fadeInUpBig animate__slow	1s">
+        <img src={photo} alt="" width={1000}/>
       </div>
 
       <Formik
@@ -66,7 +71,7 @@ export default function Login() {
         >
         {({ errors }) => {
           return (
-            <Form className="loginForm">
+            <Form className="loginForm wow animate__animated animate__fadeInDownBig animate__slow 1s">
               <div className="text">
                 <h1>Login to Your Account</h1>
                 <p>Enter your details to continue</p>

@@ -102,7 +102,7 @@ export default function Footer() {
                       <Link to="/doctors">Doctors</Link>
                     </li>
                     <li className='font-semibold md:my-0 toRight'>
-                      <Link to="/register">Register</Link>
+                      <Link className="btn" to="/register">Register</Link>
                     </li>
                     <li className=''>
                       <Link className="btn" to="/login">login</Link>

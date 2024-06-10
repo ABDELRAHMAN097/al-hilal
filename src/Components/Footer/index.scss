@@ -1,15 +1,8 @@
 #footer {
   width: 100%;
-  color: white;
+  color: var(--fontColor);
   position: relative;
-  background-image: url('../../assets/img/foooootr.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-.filter{
-  background-color: #4444448f;
-  width: 100%;
-  height: 100%;
+ background-color: var(--bgFooter);
 }
   .footer-top {
     padding: 70px 10px 70px 10px;
@@ -75,7 +68,7 @@
         font-weight: 700;
       }
       p {
-        color: white;
+        color: var(--fontColor);
       }
     }
     .input-supmit {
@@ -119,7 +112,7 @@
       margin-left: 0;
     }
     a {
-      color: white;
+      color: var(--fontColor);
     }
     h2 {
       font-size: 20px;
@@ -171,7 +164,7 @@
       color: var(--blueColor);
     }
   }
-}
+
 
 .toRight {
   font-weight: 500;
